@@ -1,0 +1,86 @@
+<form #f="ngForm" novalidate >
+<ion-header>
+    <ion-navbar color="primary">
+        <ion-title>
+            Perfil Transaccional
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-card class=cartaprincipal>
+  <ion-card-header text-center>
+    Perfil Transaccional
+  </ion-card-header>
+  <ion-card-content>
+    
+        <ion-list>
+             <ion-item>
+                <ion-label text-center>Transacciones estimadas por mes</ion-label>
+                <ion-select required name="transmes" [(ngModel)]="data.transmes">
+                    <ion-option value="0003">0-3</ion-option>
+                    <ion-option value="0406">4-6</ion-option>
+                </ion-select>
+            </ion-item>
+        
+
+          <ion-item>
+                <ion-label text-center>Operacioness estimadas por mes</ion-label>
+                <ion-select required name="transmes2" [(ngModel)]="data.transmes2">
+                    <ion-option value="0010">0-10</ion-option>
+                    <ion-option value="1416">14-16</ion-option>
+                </ion-select>
+            </ion-item>
+        
+
+        </ion-list>
+
+
+
+
+
+</ion-card-content>
+</ion-card>
+
+
+
+<ion-card class=cartaprincipal>
+  <ion-card-header text-center>
+    INFORMACIÓN DE CONTACTO
+  </ion-card-header>
+  <ion-card-content>
+    
+        <ion-list>
+             <ion-item>
+                <ion-label text-center>Transacciones estimadas por mes</ion-label>
+                <ion-select required name="retirosmen1" [(ngModel)]="data.retirosmen1">
+                    <ion-option value="0003">0-3</ion-option>
+                    <ion-option value="0406">4-6</ion-option>
+                </ion-select>
+            </ion-item>
+        
+
+          <ion-item>
+                <ion-label text-center>Operacioness estimadas por mes</ion-label>
+                <ion-select required name="retirosmen2" [(ngModel)]="data.retirosmen2">
+                    <ion-option value="0010">0-10</ion-option>
+                    <ion-option value="1416">14-16</ion-option>
+                </ion-select>
+            </ion-item>
+        
+
+        </ion-list>
+
+
+
+
+
+</ion-card-content>
+</ion-card>
+<ion-footer>
+ <div class="center">
+            <button ion-button type="submit" (click)="onSubmit(f)">Siguiente</button>
+        </div>
+    
+
+</ion-footer>
+</form>

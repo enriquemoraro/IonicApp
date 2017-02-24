@@ -1,0 +1,52 @@
+<ion-header>
+    <ion-navbar color="primary">
+        <ion-title>
+            Persona
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-card class=cartaprincipal>
+    <ion-card-header text-center>
+        INFORMACIÓN PERSONAL
+    </ion-card-header>
+    <ion-card-content>
+        <form #f="ngForm" novalidate>
+            <ion-list>
+            <ion-item>
+                <ion-label>Nacionalidad</ion-label>
+                <ion-select required name="nacionalidad" [(ngModel)]="data.nacionalidad">
+                    <ion-option value="MEX">Mexicano</ion-option>
+                    <ion-option value="BRA">Brasileño</ion-option>
+                    <ion-option value="USA">Gringo</ion-option>
+                </ion-select>
+            </ion-item> 
+            <div [hidden]="f.controls.nacionalidad && (f.controls.nacionalidad.valid || (f.controls.nacionalidad.pristine && !isSubmitted))" class="note danger">
+                La nacionalidad es requerida
+            </div>
+            <ion-item>
+                <ion-label>Pais</ion-label>
+                <ion-select required name="pais" [(ngModel)]="data.pais">
+                    <ion-option value="MEX">Mexico</ion-option>
+                    <ion-option value="BRA">Brasil</ion-option>
+                    <ion-option value="USA">Estados Unidos</ion-option>
+                </ion-select>
+            </ion-item> 
+            <div [hidden]="f.controls.pais && (f.controls.pais.valid || (f.controls.pais.pristine && !isSubmitted))" class="note danger">
+                El pais de residencia es requerido
+            </div>
+            <ion-item>
+                <ion-label>Fecha de nacimiento</ion-label>
+                <ion-datetime name="month" displayFormat="MMM DD YYYY" [(ngModel)]="event.month"></ion-datetime>
+            </ion-item>
+            <div [hidden]="f.controls.month && (f.controls.month.valid || (f.controls.month.pristine && !isSubmitted))" class="note danger">
+                La fecha de nacimiento es requerida
+            </div>
+        </ion-list>      
+        </form>
+    </ion-card-content>
+</ion-card>
+<ion-footer>
+    <div class="center">
+        <button ion-button type="submit" (click)="onSubmit(f)">Siguiente</button>
+    </div>
+</ion-footer>

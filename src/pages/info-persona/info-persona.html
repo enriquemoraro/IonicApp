@@ -1,0 +1,54 @@
+<ion-header>
+    <ion-navbar color="primary">
+        <ion-title>
+            Persona
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-card class=cartaprincipal>
+  <ion-card-header text-center>
+    INFORMACIÓN PERSONAL
+  </ion-card-header>
+  <ion-card-content>
+    <form #f="ngForm" novalidate>
+        <ion-list>
+            <ion-item>
+                <ion-label floating>Apellido Paterno*</ion-label>
+                <ion-input type="text" name="appaterno" required [(ngModel)]="data.appaterno"></ion-input>
+            </ion-item>
+            <div [hidden]="f.controls.appaterno && (f.controls.appaterno.valid || (f.controls.appaterno.pristine && !isSubmitted))" class="note danger">
+                El apellido paterno es requerido
+            </div>
+            <ion-item>
+                <ion-label floating>Apellido Materno*</ion-label>
+                <ion-input type="text" name="apmaterno" required [(ngModel)]="data.apmaterno"></ion-input>
+            </ion-item>
+            <div [hidden]="f.controls.apmaterno && (f.controls.apmaterno.valid || (f.controls.apmaterno.pristine && !isSubmitted))" class="note danger">
+                El apellido materno es requerido
+            </div>
+            <ion-item>
+                <ion-label floating>Nombre(s)*</ion-label>
+                <ion-input type="text" name="nombre" required [(ngModel)]="data.nombre"></ion-input>
+            </ion-item>
+            <div [hidden]="f.controls.nombre && (f.controls.nombre.valid || (f.controls.nombre.pristine && !isSubmitted))" class="note danger">
+                El nombre es requerido
+            </div>
+            <ion-item>
+                <ion-label>Sexo</ion-label>
+                <ion-select required name="sexo" [(ngModel)]="data.sexo">
+                    <ion-option value="F">Femenino</ion-option>
+                    <ion-option value="M">Masculino</ion-option>
+                </ion-select>
+            </ion-item> 
+            <div [hidden]="f.controls.sexo && (f.controls.sexo.valid || (f.controls.sexo.pristine && !isSubmitted))" class="note danger">
+                El sexo es requerido
+            </div>
+        </ion-list>      
+    </form>
+</ion-card-content>
+</ion-card>
+<ion-footer>
+    <div class="center">
+        <button ion-button type="submit" (click)="onSubmit(f)">Siguiente</button>
+    </div>
+</ion-footer>

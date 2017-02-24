@@ -1,0 +1,99 @@
+<ion-header>
+    <ion-navbar color="primary">
+        <ion-title>
+            Domicilio
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-card class=cartaprincipal>
+    <ion-card-header text-center>
+        INFORMACIÓN DE DOMICILIO
+    </ion-card-header>
+    <ion-card-content>
+        <form #f="ngForm" novalidate>
+           
+        <!-- Scroll bar present and enabled -->        
+        <div style="width: 350px; height: 450px; overflow-y: scroll;">
+            <ion-list>
+                <ion-item>
+                    <ion-label floating>Código Postal*</ion-label>
+                    <ion-input type="number" name="cpostal" required [(ngModel)]="data.cpostal"></ion-input>
+                </ion-item>
+                <div [hidden]="f.controls.cpostal && (f.controls.cpostal.valid || (f.controls.cpostal.pristine && !isSubmitted))" class="note danger">
+                    El código postal es requerido
+                </div>
+                <ion-item>
+                    <ion-label floating>Calle*</ion-label>
+                    <ion-input type="text" name="infocalle" required [(ngModel)]="data.infocalle"></ion-input>
+                </ion-item>
+                <div [hidden]="f.controls.infocalle && (f.controls.infocalle.valid || (f.controls.infocalle.pristine && !isSubmitted))" class="note danger">
+                    El nombre de la calle es requerido
+                </div>
+                <ion-item>
+                    <ion-label floating>Numero Exterior*</ion-label>
+                    <ion-input type="number" name="noexterior" required [(ngModel)]="data.noexterior"></ion-input>
+                </ion-item>
+                <div [hidden]="f.controls.noexterior && (f.controls.noexterior.valid || (f.controls.noexterior.pristine && !isSubmitted))" class="note danger">
+                    El numero exterior es requerido
+                </div>
+                <ion-item>
+                    <ion-label floating>Numero Interior</ion-label>
+                    <ion-input type="number" name="noixterior" required [(ngModel)]="data.noixterior"></ion-input>
+                </ion-item>
+                <div [hidden]="f.controls.noixterior && (f.controls.noixterior.valid || (f.controls.noixterior.pristine && !isSubmitted))" class="note danger">
+                    El numero interior es requerido
+                </div>
+                <ion-item>
+                    <ion-label>Pais</ion-label>
+                    <ion-select required name="domicilioPais" [(ngModel)]="data.domicilioPais">
+                        <ion-option value="MEX">México</ion-option>
+                        <ion-option value="USA">Estados Unidos</ion-option>
+                        <ion-option value="ARG">Argentina</ion-option>
+                    </ion-select>
+                </ion-item> 
+                <div [hidden]="f.controls.domicilioPais && (f.controls.domicilioPais.valid || (f.controls.domicilioPais.pristine && !isSubmitted))" class="note danger">
+                    El pais es requerido
+                </div>
+                <ion-item>
+                    <ion-label>Estado</ion-label>
+                    <ion-select required name="domicilioEstado" [(ngModel)]="data.domicilioEstado">
+                        <ion-option value="CDMX">Ciudad de México</ion-option>
+                        <ion-option value="GTO">Guanajuato</ion-option>
+                        <ion-option value="MOR">Morelos</ion-option>
+                    </ion-select>
+                </ion-item> 
+                <div [hidden]="f.controls.domicilioEstado && (f.controls.domicilioEstado.valid || (f.controls.domicilioEstado.pristine && !isSubmitted))" class="note danger">
+                    El estado es requerido
+                </div>
+                <ion-item>
+                    <ion-label>Colonia*</ion-label>
+                    <ion-select required name="domicilioColonia" [(ngModel)]="data.domicilioColonia">
+                        <ion-option value="EJS">Ejidos De San Agustin</ion-option>
+                        <ion-option value="REF">Reforma</ion-option>
+                        <ion-option value="AGi">Las Aguilas</ion-option>
+                    </ion-select>
+                </ion-item> 
+                <div [hidden]="f.controls.domicilioColonia && (f.controls.domicilioColonia.valid || (f.controls.domicilioColonia.pristine && !isSubmitted))" class="note danger">
+                    La colonia es requerida
+                </div>
+                <ion-item>
+                    <ion-label>Delegación*</ion-label>
+                    <ion-select required name="domicilioDelegacion" [(ngModel)]="data.domicilioDelegacion">
+                        <ion-option value="COY">Coyoacán</ion-option>
+                        <ion-option value="IZTC">Iztacalco</ion-option>
+                        <ion-option value="IZTA">Iztapalapa</ion-option>
+                    </ion-select>
+                </ion-item> 
+                <div [hidden]="f.controls.domicilioDelegacion && (f.controls.domicilioDelegacion.valid || (f.controls.domicilioDelegacion.pristine && !isSubmitted))" class="note danger">
+                    La colonia es requerida
+                </div>
+            </ion-list>   
+            </div>   
+        </form>
+    </ion-card-content>
+</ion-card>
+<ion-footer>
+    <div class="center">
+        <button ion-button type="submit" (click)="onSubmit(f)">Siguiente</button>
+    </div>
+</ion-footer>

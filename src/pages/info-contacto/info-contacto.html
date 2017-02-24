@@ -1,0 +1,76 @@
+<form #f="ngForm" novalidate >
+<ion-header>
+    <ion-navbar color="primary">
+        <ion-title>
+           Contacto
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-card class=cartaprincipal>
+  <ion-card-header text-center>
+    INFORMACIÓN DE CONTACTO
+  </ion-card-header>
+  <ion-card-content>
+    
+        <ion-list>
+            <ion-item>
+                <ion-label floating>Telefono*</ion-label>
+                <ion-input type="number" name="telefono" required [(ngModel)]="data.telefono"></ion-input>
+            </ion-item>
+            <div [hidden]="f.controls.telefono && (f.controls.telefono.valid || (f.controls.telefono.pristine && !isSubmitted))" class="note danger">
+                El telefono es requerido
+            </div>
+            <ion-item>
+
+                
+                <ion-label floating>Email*</ion-label>
+                <ion-input type="email" name="email" required [(ngModel)]="data.email"></ion-input>
+            </ion-item>
+            <div [hidden]="f.controls.email && (f.controls.email.valid || (f.controls.email.pristine && !isSubmitted))" class="note danger">
+                El email es un campo requerido
+            </div>
+         
+        </ion-list>
+
+
+
+
+
+</ion-card-content>
+</ion-card>
+
+
+<ion-card class=cartaprincipal2>
+  <ion-card-header text-center>
+    AUTORIZACIÓN PARA USO <br> DE CORREO ELECTRONICO
+  </ion-card-header>
+  <ion-card-content>
+<ion-list>
+
+    <ion-row>
+  <ion-col width-75> <ion-item text-wrap item-left class=justifytext>
+      Autorizo a Allianz México, S.A. Cía de Seguros a recibir instrucciones sobre  mi Fondo Individual en Administracíon a traves de este Email (Correo Electronico Autorizado)
+  
+        </ion-item>
+    </ion-col>
+  <ion-col width-50 class=center-toggle>
+
+ <ion-toggle [(ngModel)]="data.tos" name="tos" type="button" (click)="noSubmit($event)"></ion-toggle>
+
+
+  </ion-col>
+</ion-row>
+         
+          
+</ion-list>
+</ion-card-content>
+</ion-card>
+<ion-footer>
+ <div class="center">
+            <button ion-button type="submit" (click)="onSubmit(f)">Siguiente</button>
+        </div>
+    
+
+</ion-footer>
+ </form>

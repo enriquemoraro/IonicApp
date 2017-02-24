@@ -1,0 +1,44 @@
+<ion-header>
+    <ion-navbar color="primary">
+        <ion-title>
+            Información de identificación
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-card class=cartaprincipal>
+ 
+  <ion-card-content>
+    <form #f="ngForm" novalidate >
+        <ion-list>
+            <ion-item>
+                <ion-label floating>RFC*</ion-label>
+                <ion-input type="text" name="rfc" required [(ngModel)]="data.rfc"></ion-input>
+            </ion-item>
+            <div [hidden]="f.controls.rfc && (f.controls.rfc.valid || (f.controls.rfc.pristine && !isSubmitted))" class="note danger">
+                El RFC es un campo requerido
+            </div>
+            <ion-item>
+                <ion-label floating>INE*</ion-label>
+                <ion-input type="text" name="ine" required [(ngModel)]="data.ine"></ion-input>
+            </ion-item>
+            <div [hidden]="f.controls.ine && (f.controls.ine.valid || (f.controls.ine.pristine && !isSubmitted))" class="note danger">
+               El INE es un campo requerido
+            </div>
+            <ion-item>
+                <ion-label floating>CURP*</ion-label>
+                <ion-input type="text" name="curp" required [(ngModel)]="data.curp"></ion-input>
+            </ion-item>
+            <div [hidden]="f.controls.curp && (f.controls.curp.valid || (f.controls.curp.pristine && !isSubmitted))" class="note danger">
+                El CURP es un campo requerido
+            </div>
+                </ion-list>      
+       
+    </form>
+</ion-card-content>
+</ion-card>
+
+<ion-footer>
+ <div class="center">
+            <button ion-button type="submit" (click)="onSubmit(f)">Siguiente</button>
+        </div>
+</ion-footer>
