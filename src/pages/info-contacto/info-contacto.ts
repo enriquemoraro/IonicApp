@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController } from 'ionic-angular';
 import { MyContactoService } from '../../services/contactoservice';
 import { InfoDomicilioPage } from '../info-domicilio/info-domicilio';
 
@@ -36,7 +36,6 @@ export class InfoContactoPage {
       this.formData.telefono = this.data.telefono;
       this.formData.email = this.data.email;
       this.nav.push(InfoDomicilioPage);
-    //this.nav.push();
     }
   }
   
@@ -47,7 +46,4 @@ export class InfoContactoPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad GeninfoPage');
   }
-
-
-
 }

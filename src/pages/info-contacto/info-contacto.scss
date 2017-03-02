@@ -1,5 +1,5 @@
 page-info-contacto {
-    .center-toggle{
+.center-toggle{
  
     padding-top: 15%;
 }
@@ -8,6 +8,12 @@ page-info-contacto {
       font-size: 1.2rem;
     line-height: 1.0;
 }
+
+.note.danger {
+     padding-left: 16px;
+     color: #d14;
+}
+
 .label label-md{
     font-size: 1.0em;
     line-height: 1.2;
@@ -47,5 +53,5 @@ page-info-contacto {
        background: transparent;
        cursor: pointer;
        border-bottom: 1px solid lightgray;
-  }
+    }
 }

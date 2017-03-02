@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController } from 'ionic-angular';
 import { PerfilService } from '../../services/perfilservice';
+import { InvestigacionPage } from '../investigacion/investigacion';
 
 /*
   Generated class for the PerfilTrans page.
@@ -36,8 +37,8 @@ export class PerfilTransPage {
       this.formData.transmes = this.data.transmes;
       this.formData.transmes2 = this.data.transmes2;
       this.formData.retirosmen1 = this.data.retirosmen1;
-        this.formData.retirosmen2 = this.data.retirosmen2; 
-    //  this.nav.push();
+      this.formData.retirosmen2 = this.data.retirosmen2; 
+      this.nav.push(InvestigacionPage);
     }
   }
   

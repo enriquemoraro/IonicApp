@@ -1,0 +1,80 @@
+<ion-header>
+    <ion-navbar color="primary">
+        <ion-title>
+            Investigación
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-card class=cartaprincipal>
+  <ion-card-header text-center>
+    DETALLE DE INVESTIGACIÓN
+  </ion-card-header>
+  <ion-card-content>
+    <form #f="ngForm" novalidate>
+        <ion-list>
+            <ion-item>
+                <ion-label floating>Nombre Completo*</ion-label>
+                <ion-input type="text" name="nomCompleto" required [(ngModel)]="data.nomCompleto"></ion-input>
+            </ion-item>
+            <div [hidden]="f.controls.nomCompleto && (f.controls.nomCompleto.valid || (f.controls.nomCompleto.pristine && !isSubmitted))" class="note danger">
+                El nombre completo es requerido
+            </div>
+            <ion-item>
+                <ion-label floating>Puesto*</ion-label>
+                <ion-input type="text" name="puesto" required [(ngModel)]="data.puesto"></ion-input>
+            </ion-item>
+            <div [hidden]="f.controls.puesto && (f.controls.puesto.valid || (f.controls.puesto.pristine && !isSubmitted))" class="note danger">
+                El puesto es requerido
+            </div>
+            <ion-item>
+                    <ion-label>Parentesco*</ion-label>
+                    <ion-select required name="parentesco" [(ngModel)]="data.parentesco"  (ionChange)="updateItem(data)">
+                        <ion-option value="padre">Padre</ion-option>
+                        <ion-option value="hermano">Hermano</ion-option>
+                        <ion-option value="madre">Madre</ion-option>
+                        <ion-option value="otro">Otro</ion-option>
+                    </ion-select>
+             </ion-item> 
+                <div [hidden]="f.controls.parentesco && (f.controls.parentesco.valid || (f.controls.parentesco.pristine && !isSubmitted))" class="note danger">
+                    El parentesco es requerido
+                </div>
+            <ion-row>
+            <ion-col width-20> 
+                <ion-item text-wrap item-left class=justifytext>
+                   <ion-icon  md="md-calendar" class=calendario></ion-icon>
+                </ion-item>
+            </ion-col>
+            <ion-col width-80>  
+                <ion-item text-wrap item-left class=justifytext> <ion-label>Inicio de Funciones*</ion-label>
+                   <ion-datetime name="inicioFunc" displayFormat="MMM DD YYYY" [(ngModel)]="event.inicioFunc"></ion-datetime>
+                </ion-item>
+                <div [hidden]="f.controls.inicioFunc && (f.controls.inicioFunc.valid || (f.controls.inicioFunc.pristine && !isSubmitted))" class="note danger">
+                    La fecha de inicio de funciones es requerida
+                </div>
+            </ion-col>
+            </ion-row>
+
+<ion-row>
+            <ion-col width-20> 
+                <ion-item text-wrap item-left class=justifytext>
+                   <ion-icon  md="md-calendar" class=calendario></ion-icon>
+                </ion-item>
+            </ion-col>
+            <ion-col width-80>  
+                <ion-item text-wrap item-left class=justifytext> <ion-label>Termino de funciones*</ion-label>
+                <ion-datetime name="termFunc" displayFormat="MMM DD YYYY" [(ngModel)]="event.termFunc"></ion-datetime>
+            </ion-item>
+            <div [hidden]="f.controls.termFunc && (f.controls.termFunc.valid || (f.controls.termFunc.pristine && !isSubmitted))" class="note danger">
+                La fecha de termino de funciones es requerida
+            </div>
+             </ion-col>
+            </ion-row>
+        </ion-list>      
+    </form>
+</ion-card-content>
+</ion-card>
+<ion-footer>
+    <div class="center">
+        <button ion-button type="submit" (click)="onSubmit(f)">Siguiente</button>
+    </div>
+</ion-footer>

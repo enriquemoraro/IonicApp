@@ -6,13 +6,11 @@
         </ion-title>
     </ion-navbar>
 </ion-header>
-
 <ion-card class=cartaprincipal>
   <ion-card-header text-center>
     INFORMACIÓN DE CONTACTO
   </ion-card-header>
   <ion-card-content>
-    
         <ion-list>
             <ion-item>
                 <ion-label floating>Telefono*</ion-label>
@@ -22,24 +20,15 @@
                 El telefono es requerido
             </div>
             <ion-item>
-
-                
                 <ion-label floating>Email*</ion-label>
                 <ion-input type="email" name="email" required [(ngModel)]="data.email"></ion-input>
             </ion-item>
             <div [hidden]="f.controls.email && (f.controls.email.valid || (f.controls.email.pristine && !isSubmitted))" class="note danger">
                 El email es un campo requerido
             </div>
-         
         </ion-list>
-
-
-
-
-
 </ion-card-content>
 </ion-card>
-
 
 <ion-card class=cartaprincipal2>
   <ion-card-header text-center>
@@ -49,12 +38,13 @@
 <ion-list>
 
     <ion-row>
-  <ion-col width-75> <ion-item text-wrap item-left class=justifytext>
+  <ion-col width-75> 
+      <ion-item text-wrap item-left class=justifytext>
       Autorizo a Allianz México, S.A. Cía de Seguros a recibir instrucciones sobre  mi Fondo Individual en Administracíon a traves de este Email (Correo Electronico Autorizado)
   
         </ion-item>
     </ion-col>
-  <ion-col width-50 class=center-toggle>
+  <ion-col width-35 class=center-toggle>
 
  <ion-toggle [(ngModel)]="data.tos" name="tos" type="button" (click)="noSubmit($event)"></ion-toggle>
 
@@ -70,7 +60,5 @@
  <div class="center">
             <button ion-button type="submit" (click)="onSubmit(f)">Siguiente</button>
         </div>
-    
-
 </ion-footer>
  </form>

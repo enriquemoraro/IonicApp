@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { MyNacionalidadService } from '../../services/nacionalidadService';
-import { InfoDomicilioPage } from '../../pages/info-domicilio/info-domicilio';
+import { InfoContactoPage } from '../../pages/info-contacto/info-contacto';
 
 /*
   Generated class for the InfoNacionalidad page.
@@ -37,7 +37,7 @@ export class InfoNacionalidadPage {
       this.formData.nacionalidad = this.data.nacionalidad;
       this.formData.pais = this.data.pais;
       this.formData.month = this.data.month;
-      this.nav.push(InfoDomicilioPage); 
+      this.nav.push(InfoContactoPage); 
     }
 
   }

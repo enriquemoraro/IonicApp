@@ -10,6 +10,15 @@
   <ion-card-content>
     <form #f="ngForm" novalidate >
         <ion-list>
+
+
+            <ion-item>
+
+                <ion-toggle [(ngModel)]="data.tos" name="tos" type="button" (ionChange)="updateItem(data)" checked="false"></ion-toggle>
+            </ion-item>
+
+
+
             <ion-item>
                 <ion-label floating>RFC*</ion-label>
                 <ion-input type="text" name="rfc" required [(ngModel)]="data.rfc"></ion-input>

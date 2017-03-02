@@ -11,6 +11,12 @@ import { InfoNacionalidadPage } from '../pages/info-nacionalidad/info-nacionalid
 import { InfoDomicilioPage} from '../pages/info-domicilio/info-domicilio';
 import { PerfilService } from '../services/perfilservice';
 import { PerfilTransPage} from '../pages/perfil-trans/perfil-trans';
+import { MyContactoService } from '../services/contactoservice';
+import { InfoContactoPage } from '../pages/info-contacto/info-contacto';
+
+
+import { InvestigacionPage } from '../pages/investigacion/investigacion'; 
+import { MyInvestigacionService } from '../services/investigacionService';
 
 @NgModule({
   declarations: [
@@ -19,7 +25,9 @@ import { PerfilTransPage} from '../pages/perfil-trans/perfil-trans';
     InfoPersonaPage,
     InfoNacionalidadPage,
     InfoDomicilioPage,
-    PerfilTransPage
+    PerfilTransPage,
+    InfoContactoPage,
+    InvestigacionPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -31,8 +39,10 @@ import { PerfilTransPage} from '../pages/perfil-trans/perfil-trans';
     InfoPersonaPage,
     InfoNacionalidadPage,
     InfoDomicilioPage,
-    PerfilTransPage
+    PerfilTransPage,
+    InfoContactoPage,
+    InvestigacionPage
   ],
-  providers: [{provide: PerfilService, useClass: PerfilService}, {provide: MyDomicilioService, useClass: MyDomicilioService}, {provide: MyNacionalidadService, useClass: MyNacionalidadService}, {provide: MyInfoPerService, useClass: MyInfoPerService}, {provide: Rfcservice, useClass: Rfcservice}, {provide: ErrorHandler, useClass: IonicErrorHandler}]
+  providers: [{provide: MyInvestigacionService, useClass: MyInvestigacionService}, {provide: MyContactoService, useClass: MyContactoService}, {provide: PerfilService, useClass: PerfilService}, {provide: MyDomicilioService, useClass: MyDomicilioService}, {provide: MyNacionalidadService, useClass: MyNacionalidadService}, {provide: MyInfoPerService, useClass: MyInfoPerService}, {provide: Rfcservice, useClass: Rfcservice}, {provide: ErrorHandler, useClass: IonicErrorHandler}]
 })
 export class AppModule {}

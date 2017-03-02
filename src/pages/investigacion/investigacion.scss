@@ -1,26 +1,25 @@
-page-home {
-        .cartaprincipal{
-       margin-top: 20%;
+page-investigacion {
+     .cartaprincipal{
+        margin-top: 20%;
+    }
+   .button-md{
+        width:100%;
     }
 
-.button-md{
-    width: 100%;
-}
+        .calendario{
+        font-size: 30px
+    }
+
+    
     .center {
         text-align: center;
     }
-
   .note.danger {
        padding-left: 16px;
        color: #d14;
     }
 
-
-    .toolbar-title.toolbar-title-md{
-    font-size: initial;
-    }
-
-      .input-cover {
+  .input-cover {
        position: absolute;
        top: 0;
        left: 0;
@@ -29,7 +28,7 @@ page-home {
        height: 100%;
   }
 
- .item-cover {
+  .item-cover {
        position: absolute;
        top: 0;
        left: 0;

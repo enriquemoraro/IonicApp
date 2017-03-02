@@ -34,13 +34,21 @@
             <div [hidden]="f.controls.pais && (f.controls.pais.valid || (f.controls.pais.pristine && !isSubmitted))" class="note danger">
                 El pais de residencia es requerido
             </div>
-            <ion-item>
-                <ion-label>Fecha de nacimiento</ion-label>
+            <ion-row>
+            <ion-col width-20> 
+                <ion-item text-wrap item-left class=justifytext>
+                   <ion-icon  md="md-calendar" class=calendario></ion-icon>
+                </ion-item>
+            </ion-col>
+            <ion-col width-80>  
+                <ion-item text-wrap item-left class=justifytext><ion-label >Fecha de nacimiento</ion-label>
                 <ion-datetime name="month" displayFormat="MMM DD YYYY" [(ngModel)]="event.month"></ion-datetime>
             </ion-item>
             <div [hidden]="f.controls.month && (f.controls.month.valid || (f.controls.month.pristine && !isSubmitted))" class="note danger">
                 La fecha de nacimiento es requerida
             </div>
+            </ion-col>
+            </ion-row>
         </ion-list>      
         </form>
     </ion-card-content>

@@ -26,12 +26,12 @@ export class InfoDomicilioPage {
     }
   }
   
-  onSubmit(MyDomicilioService) {
+  onSubmit(domicilioService) {
     this.isSubmitted = true;
     console.log('onSubmit');
-    console.log(MyDomicilioService);
+    console.log(domicilioService);
     
-    if ((MyDomicilioService.valid)) {
+    if ((domicilioService.valid)) {
       this.formData.cpostal =  this.data.cpostal;
       this.formData.infocalle = this.data.infocalle;
       this.formData.noexterior = this.data.noexterior; 
