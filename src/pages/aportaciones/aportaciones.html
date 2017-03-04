@@ -1,0 +1,58 @@
+<ion-header>
+    <ion-navbar color="primary">
+        <ion-title>
+            Aportaciones
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-card class=cartaprincipal>
+  <ion-card-header text-center>
+    INFORMACIÓN DE LAS APORTACIONES      
+  </ion-card-header>
+  <ion-card-content>
+    <form #f="ngForm" novalidate>
+        <ion-list>
+
+            <ion-item>
+                    <ion-label>Producto</ion-label>
+                    <ion-select required name="producto" [(ngModel)]="data.producto" >
+                        <ion-option value="educacion">OptiMaxx Educaión</ion-option>
+                        <ion-option value="plus">OptiMaxx Plus</ion-option>
+                    </ion-select>
+             </ion-item> 
+                <div [hidden]="f.controls.producto && (f.controls.producto.valid || (f.controls.producto.pristine && !isSubmitted))" class="note danger">
+                    El producto es requerido
+                </div>
+
+
+                <ion-item>
+                <ion-label floating>Indique el monto que desae aportar*</ion-label>
+                <ion-input type="text" name="montoApor" required [(ngModel)]="data.montoApor"></ion-input>
+            </ion-item>
+            <div [hidden]="f.controls.montoApor && (f.controls.montoApor.valid || (f.controls.montoApor.pristine && !isSubmitted))" class="note danger">
+                El nombre completo es requerido
+            </div>
+
+
+                 <ion-item>
+                    <ion-label>Periodicidad</ion-label>
+                    <ion-select required name="periodicidad" [(ngModel)]="data.periodicidad">
+                        <ion-option value="1">Mesual</ion-option>
+                        <ion-option value="3">Trimestral</ion-option>
+                        <ion-option value="6">Semestral</ion-option>
+                        <ion-option value="12">Anual</ion-option>
+                    </ion-select>
+             </ion-item> 
+                <div [hidden]="f.controls.periodicidad && (f.controls.periodicidad.valid || (f.controls.periodicidad.pristine && !isSubmitted))" class="note danger">
+                    El parentesco es requerido
+                </div>
+            
+        </ion-list>      
+    </form>
+</ion-card-content>
+</ion-card>
+<ion-footer>
+    <div class="center">
+        <button ion-button type="submit" (click)="onSubmit(f)">Siguiente</button>
+    </div>
+</ion-footer>

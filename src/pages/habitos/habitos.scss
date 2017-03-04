@@ -1,0 +1,77 @@
+page-habitos {
+
+.cartaprincipal{
+       margin-top: 20%;
+}
+
+.button-md{
+    width: 100%;
+}
+    .center {
+        text-align: center;
+    }
+
+  .note.danger {
+       padding-left: 16px;
+       color: #d14;
+    }
+
+
+    .toolbar-title.toolbar-title-md{
+    font-size: initial;
+    }
+
+      .input-cover {
+       position: absolute;
+       top: 0;
+       left: 0;
+       width: 100%;
+       border-bottom: 1px solid lightgray;
+       height: 100%;
+  }
+
+ .item-cover {
+       position: absolute;
+       top: 0;
+       left: 0;
+       width: 100%;
+       height: 100%;
+       background: transparent;
+       cursor: pointer;
+       border-bottom: 1px solid lightgray;
+  }
+
+  .label-md{
+   white-space: normal !important;
+   max-width: none !important;
+   width: 100%;
+}
+
+}
+
+
+ion-modal {
+    padding: 20px;
+    background: rgba(0,0,0,0.6)
+}
+
+#circle{
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+}
+
+ion-content {
+    background-color: red;
+    /*background-image: url('fondo_portafolio_inv.png');*/
+    background-repeat: no-repeat;
+background-size:cover;
+}
+
+
+.portafolioButton{
+    width: 90%;
+    text-align:center;
+    margin:auto;
+
+}

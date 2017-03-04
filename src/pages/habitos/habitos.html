@@ -1,0 +1,69 @@
+<ion-header>
+    <ion-navbar color="primary">
+        <ion-title>
+            Hábitos
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-card class=cartaprincipal>
+ 
+  <ion-card-content>
+    <form #f="ngForm" novalidate >
+        <ion-list>      
+<ion-item class="tos1">
+            <ion-toggle item-right [(ngModel)]="data.tos1" name="tos1" type="button"></ion-toggle>
+            <ion-label item-left>¿Fuma?</ion-label>
+        </ion-item>
+        <ion-item [hidden]="!data.tos1">
+                <ion-label>¿Usted fuma cada?</ion-label>
+                <ion-select required name="Fuma" [(ngModel)]="data.Fuma">
+                    <ion-option value="1">mes</ion-option>
+                    <ion-option value="2">dos mese</ion-option>
+                </ion-select>
+        </ion-item>
+        <ion-item [hidden]="!data.tos1">
+                <ion-label>¿Cuántos cigarros fuma por ocasión?</ion-label>
+                <ion-select required name="cuantoFuma" [(ngModel)]="data.cuantoFuma">
+                    <ion-option value="1">tres</ion-option>
+                    <ion-option value="2">cuatro</ion-option>
+                </ion-select>
+        </ion-item>
+        <ion-item class="tos2">
+            <ion-toggle item-right [(ngModel)]="data.tos2" name="tos2" type="button"></ion-toggle>
+            <ion-label item-left>¿Consume alcohol?</ion-label>
+        </ion-item>
+        <ion-item [hidden]="!data.tos2">
+                <ion-label>¿Usted ingiere bebidas alcohólicas cada?</ion-label>
+                <ion-select required name="alcohol" [(ngModel)]="data.alcohol">
+                    <ion-option value="1">mes</ion-option>
+                    <ion-option value="2">dos meses</ion-option>
+                </ion-select>
+        </ion-item>
+        <ion-item [hidden]="!data.tos2">
+                <ion-label>¿Cuántas bebidas consume por ocasión?</ion-label>
+                <ion-select required name="cuantoAlcohol" [(ngModel)]="data.cuantoAlcohol">
+                    <ion-option value="1">tres</ion-option>
+                    <ion-option value="2">cuatro</ion-option>
+                </ion-select>
+        </ion-item>
+        <ion-item [hidden]="!data.tos2">
+                <ion-label>Tipos de bebida*</ion-label>
+                <ion-select required name="tipoBebida" [(ngModel)]="data.tipoBebida">
+                    <ion-option value="1">Cerveza</ion-option>
+                    <ion-option value="2">vino</ion-option>
+                </ion-select>
+        </ion-item>
+        <ion-item class="tos3">
+            <ion-toggle item-right [(ngModel)]="data.tos3" name="tos3" type="button" (ionChange)="updateItem(data)"></ion-toggle>
+            <ion-label item-right>¿Consume o ha consumido algún otro tipo de droga o estimulante?</ion-label>
+        </ion-item>
+       </ion-list>      
+   </form>
+</ion-card-content>
+</ion-card>
+
+<ion-footer>
+ <div class="center">
+            <button ion-button type="submit" (click)="onSubmit(f)">Siguiente</button>
+        </div>
+</ion-footer>

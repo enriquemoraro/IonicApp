@@ -19,7 +19,8 @@ export class HomePage {
     this.data = {
       rfc: '',
       ine: '',
-      curp: ''
+      curp: '',
+      tos: false
     }
   }
 

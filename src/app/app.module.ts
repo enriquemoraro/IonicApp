@@ -13,10 +13,13 @@ import { PerfilService } from '../services/perfilservice';
 import { PerfilTransPage} from '../pages/perfil-trans/perfil-trans';
 import { MyContactoService } from '../services/contactoservice';
 import { InfoContactoPage } from '../pages/info-contacto/info-contacto';
-
-
+import { HabitosPage } from '../pages/habitos/habitos';
 import { InvestigacionPage } from '../pages/investigacion/investigacion'; 
 import { MyInvestigacionService } from '../services/investigacionService';
+import { MyHabitosService } from '../services/habitosService';
+import { pruebaModal } from '../pages/habitos/modalHabitos';
+import { AportacionesPage } from '../pages/aportaciones/aportaciones';
+import { MyAportacionesService } from '../services/aportacionesService';
 
 @NgModule({
   declarations: [
@@ -27,7 +30,10 @@ import { MyInvestigacionService } from '../services/investigacionService';
     InfoDomicilioPage,
     PerfilTransPage,
     InfoContactoPage,
-    InvestigacionPage
+    InvestigacionPage,
+    HabitosPage,
+    pruebaModal,
+    AportacionesPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -41,8 +47,11 @@ import { MyInvestigacionService } from '../services/investigacionService';
     InfoDomicilioPage,
     PerfilTransPage,
     InfoContactoPage,
-    InvestigacionPage
+    InvestigacionPage,
+    HabitosPage,
+    pruebaModal,
+    AportacionesPage
   ],
-  providers: [{provide: MyInvestigacionService, useClass: MyInvestigacionService}, {provide: MyContactoService, useClass: MyContactoService}, {provide: PerfilService, useClass: PerfilService}, {provide: MyDomicilioService, useClass: MyDomicilioService}, {provide: MyNacionalidadService, useClass: MyNacionalidadService}, {provide: MyInfoPerService, useClass: MyInfoPerService}, {provide: Rfcservice, useClass: Rfcservice}, {provide: ErrorHandler, useClass: IonicErrorHandler}]
+  providers: [{provide: MyAportacionesService, useClass: MyAportacionesService}, {provide: MyHabitosService, useClass: MyHabitosService}, {provide: MyInvestigacionService, useClass: MyInvestigacionService}, {provide: MyContactoService, useClass: MyContactoService}, {provide: PerfilService, useClass: PerfilService}, {provide: MyDomicilioService, useClass: MyDomicilioService}, {provide: MyNacionalidadService, useClass: MyNacionalidadService}, {provide: MyInfoPerService, useClass: MyInfoPerService}, {provide: Rfcservice, useClass: Rfcservice}, {provide: ErrorHandler, useClass: IonicErrorHandler}]
 })
 export class AppModule {}

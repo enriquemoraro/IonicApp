@@ -1,0 +1,43 @@
+page-aportaciones {
+      .cartaprincipal{
+       margin-top: 20%;
+    }
+
+.button-md{
+    width: 100%;
+}
+    .center {
+        text-align: center;
+    }
+
+  .note.danger {
+       padding-left: 16px;
+       color: #d14;
+    }
+
+
+    .toolbar-title.toolbar-title-md{
+    font-size: initial;
+    }
+
+      .input-cover {
+       position: absolute;
+       top: 0;
+       left: 0;
+       width: 100%;
+       border-bottom: 1px solid lightgray;
+       height: 100%;
+  }
+
+ .item-cover {
+       position: absolute;
+       top: 0;
+       left: 0;
+       width: 100%;
+       height: 100%;
+       background: transparent;
+       cursor: pointer;
+       border-bottom: 1px solid lightgray;
+  }
+
+}
