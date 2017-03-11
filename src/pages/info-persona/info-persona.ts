@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { MyInfoPerService } from '../../services/infoPerService';
+//import { MyInfoPerService } from '../../services/infoPerService';
 import { InfoNacionalidadPage } from '../info-nacionalidad/info-nacionalidad';
-
+import { GeneralService } from '../../services/GeneralService';
 /*
   Generated class for the InfoPersona page.
 
@@ -17,7 +17,7 @@ export class InfoPersonaPage {
   private data: any;
   private isSubmitted: Boolean = false;
   
-  constructor(public nav: NavController, private formData: MyInfoPerService) {
+  constructor(public nav: NavController, private formData: GeneralService) {
     this.nav = nav;
     this.formData = formData;
     this.data = {
@@ -28,16 +28,16 @@ export class InfoPersonaPage {
     }
   }
 
-    onSubmit(infoPerService) {
+    onSubmit(GeneralService) {
     this.isSubmitted = true;
     console.log('onSubmit');
-    console.log(infoPerService);
+    console.log(GeneralService);
     
-    if ((infoPerService.valid)) {
+    if ((GeneralService.valid)) {
       this.formData.nombre = this.data.nombre;
       this.formData.appaterno = this.data.appaterno;
       this.formData.apmaterno = this.data.apmaterno; 
-      this.nav.push(InfoNacionalidadPage); 
+      this.nav.push(InfoNacionalidadPage);
     }
 
   }

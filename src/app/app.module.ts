@@ -20,6 +20,9 @@ import { MyHabitosService } from '../services/habitosService';
 import { pruebaModal } from '../pages/habitos/modalHabitos';
 import { AportacionesPage } from '../pages/aportaciones/aportaciones';
 import { MyAportacionesService } from '../services/aportacionesService';
+import { GeneralService } from '../services/GeneralService';
+import { LaboralPage } from '../pages/laboral/laboral';
+import { LaboralService } from '../services/laboralservice';
 
 @NgModule({
   declarations: [
@@ -33,7 +36,8 @@ import { MyAportacionesService } from '../services/aportacionesService';
     InvestigacionPage,
     HabitosPage,
     pruebaModal,
-    AportacionesPage
+    AportacionesPage,
+    LaboralPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -50,8 +54,9 @@ import { MyAportacionesService } from '../services/aportacionesService';
     InvestigacionPage,
     HabitosPage,
     pruebaModal,
-    AportacionesPage
+    AportacionesPage,
+    LaboralPage
   ],
-  providers: [{provide: MyAportacionesService, useClass: MyAportacionesService}, {provide: MyHabitosService, useClass: MyHabitosService}, {provide: MyInvestigacionService, useClass: MyInvestigacionService}, {provide: MyContactoService, useClass: MyContactoService}, {provide: PerfilService, useClass: PerfilService}, {provide: MyDomicilioService, useClass: MyDomicilioService}, {provide: MyNacionalidadService, useClass: MyNacionalidadService}, {provide: MyInfoPerService, useClass: MyInfoPerService}, {provide: Rfcservice, useClass: Rfcservice}, {provide: ErrorHandler, useClass: IonicErrorHandler}]
+  providers: [{provide: GeneralService, useClass: GeneralService},{provide: LaboralService, useClass: LaboralService},{provide: MyAportacionesService, useClass: MyAportacionesService}, {provide: MyHabitosService, useClass: MyHabitosService}, {provide: MyInvestigacionService, useClass: MyInvestigacionService}, {provide: MyContactoService, useClass: MyContactoService}, {provide: PerfilService, useClass: PerfilService}, {provide: MyDomicilioService, useClass: MyDomicilioService}, {provide: MyNacionalidadService, useClass: MyNacionalidadService}, {provide: MyInfoPerService, useClass: MyInfoPerService}, {provide: Rfcservice, useClass: Rfcservice}, {provide: ErrorHandler, useClass: IonicErrorHandler}]
 })
 export class AppModule {}

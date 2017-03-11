@@ -27,15 +27,16 @@ export class InfoContactoPage {
     }
   }
 
-  onSubmit(contactoservice) {
+  onSubmit(GeneralService) {
     this.isSubmitted = true;
     console.log('onSubmit');
-    console.log(contactoservice);
+    console.log(GeneralService);
     
-    if ((contactoservice.valid) ) {
+    if ((GeneralService.valid) ) {
       this.formData.telefono = this.data.telefono;
       this.formData.email = this.data.email;
       this.nav.push(InfoDomicilioPage);
+      console.log(this.data);
     }
   }
   

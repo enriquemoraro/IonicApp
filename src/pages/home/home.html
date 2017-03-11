@@ -11,26 +11,9 @@
     <form #f="ngForm" novalidate >
         <ion-list>
 
-             <div class="center">
-            <button ion-button type="submit" (click)="agregarInversion()">modal</button>
-        </div>
 
 
-            <ion-item class="tos">
-                <ion-toggle item-left [(ngModel)]="data.tos" name="tos" type="button" checked="false"></ion-toggle>
-                <ion-label item-right>Agree to terms and conditions</ion-label>
-            </ion-item>
-     
-     <div [hidden]="">
-            <ion-item >
-                <ion-label>Pais</ion-label>
-                <ion-select required name="pais" [(ngModel)]="data.pais">
-                    <ion-option value="MEX">Mexico</ion-option>
-                    <ion-option value="BRA">Brasil</ion-option>
-                    <ion-option value="USA">Estados Unidos</ion-option>
-                </ion-select>
-            </ion-item> 
-            </div>
+      
 
 
 

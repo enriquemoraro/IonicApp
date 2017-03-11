@@ -1,0 +1,102 @@
+
+<div style="width: 470x; height: 500px; overflow-y: scroll;">
+<form #f="ngForm" novalidate >
+<ion-header>
+    <ion-navbar color="primary">
+        <ion-title>
+           LABORAL
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-card class=cartaprincipal>
+  <ion-card-header text-center>
+    INFORMACIÓN DE OCUPACIÓN 
+  </ion-card-header>
+  <ion-card-content>
+    
+        <ion-list>
+            <ion-item>
+                <ion-label floating>Giro o actividad*</ion-label>
+                <ion-input type="text" name="actividad" required [(ngModel)]="data.actividad"></ion-input>
+            </ion-item>
+            <div [hidden]="f.controls.actividad && (f.controls.actividad.valid || (f.controls.actividad.pristine && !isSubmitted))" class="note danger">
+                El giro o actividad es requerido
+            
+            
+            </div>
+          
+            <ion-item>
+                <ion-label floating>Ocupación*</ion-label>
+                <ion-input type="text" name="ocupacion" required [(ngModel)]="data.ocupacion"></ion-input>
+            </ion-item>
+            <div [hidden]="f.controls.ocupacion && (f.controls.ocupacion.valid || (f.controls.ocupacion.pristine && !isSubmitted))" class="note danger">
+               La ocupacion es requerida
+            </div>
+
+               <ion-item>
+
+                <ion-label floating>Principal fuente de ingresos*</ion-label>
+                <ion-input type="text" name="ingresos" required [(ngModel)]="data.ingresos"></ion-input>
+            </ion-item>
+            <div [hidden]="f.controls.ingresos && (f.controls.ingresos.valid || (f.controls.ingresos.pristine && !isSubmitted))" class="note danger">
+               La fuente de ingresos es requerida
+            </div>
+
+
+ <ion-item>
+
+                <ion-label floating>Número de serie del certificado digital*</ion-label>
+                <ion-input type="text" name="noserie" required [(ngModel)]="data.noserie"></ion-input>
+            </ion-item>
+            <div [hidden]="f.controls.noserie && (f.controls.noserie.valid || (f.controls.noserie.pristine && !isSubmitted))" class="note danger">
+               El numero de serie es requerido
+            </div>
+
+
+
+
+        </ion-list>
+</ion-card-content>
+</ion-card>
+
+
+
+<ion-card class=cartaprincipal2>
+  <ion-card-header text-center>
+    INVESTIGACIÓN ACERCA <br> DEL CLIENTE
+  </ion-card-header>
+  <ion-card-content>
+<ion-list>
+
+   <ion-row>
+  <ion-col width-75> <ion-item text-wrap item-left class=justifytext>
+      Usted, su cónuge o pariente colateral hasta el segundo grado han 
+      desempeñado funciones públicas destacadas en un páis extranjero o en territorio nacional,
+      han sido jefes de estado o de gobierno, líderes políticos,funcionarios, 
+      gubernamentales, judiciales o militares de alta jerarquía, altos ejecutivos de empresas estatales,
+       funcionarios o miembros de partidos políticos.
+        </ion-item>
+    </ion-col>
+  <ion-col width-35 class=center-toggle>
+
+<ion-toggle [(ngModel)]="data.tos" name="tos" type="button" (click)="noSubmit($event)"></ion-toggle>
+
+
+ </ion-col>
+</ion-row>
+        
+          
+</ion-list>
+</ion-card-content>
+</ion-card>
+<ion-footer>
+ <div class="center">
+            <button ion-button type="submit" (click)="onSubmit(f)">Siguiente</button>
+        </div>
+    
+
+</ion-footer>
+ </form>
+
+ </div>

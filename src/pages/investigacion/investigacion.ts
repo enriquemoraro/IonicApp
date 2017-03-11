@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, AlertController } from 'ionic-angular';
-import { MyInvestigacionService } from '../../services/investigacionService';
-
+//import { MyInvestigacionService } from '../../services/investigacionService';
+import { GeneralService } from '../../services/GeneralService';
 @Component({
   selector: 'page-investigacion',
   templateUrl: 'investigacion.html'
@@ -10,7 +10,7 @@ export class InvestigacionPage {
  private data: any;
   private isSubmitted: Boolean = false;
   
-  constructor( public alertCtrl: AlertController, public nav: NavController, private formData: MyInvestigacionService) {
+  constructor( public alertCtrl: AlertController, public nav: NavController, private formData: GeneralService) {
     this.nav = nav;
     this.formData = formData;
     this.data = {

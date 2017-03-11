@@ -1,17 +1,17 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { MyDomicilioService } from '../../services/domicilioService';
+//import { MyDomicilioService } from '../../services/domicilioService';
 import { PerfilTransPage } from '../perfil-trans/perfil-trans';
-
+import { GeneralService } from '../../services/GeneralService';
 @Component({
   selector: 'page-info-domicilio',
   templateUrl: 'info-domicilio.html'
 })
 export class InfoDomicilioPage {
-   private data: any;
+  public data: any;
   private isSubmitted: Boolean = false;
  
-  constructor(public nav: NavController, private formData: MyDomicilioService) {
+  constructor(public nav: NavController, public formData: GeneralService) {
     this.nav = nav;
     this.formData = formData;
     this.data = {
@@ -26,12 +26,13 @@ export class InfoDomicilioPage {
     }
   }
   
-  onSubmit(domicilioService) {
+  onSubmit(GeneralService) {
     this.isSubmitted = true;
     console.log('onSubmit');
-    console.log(domicilioService);
+    console.log(GeneralService);
+    console.log(this.data);
     
-    if ((domicilioService.valid)) {
+    if ((GeneralService.valid)) {
       this.formData.cpostal =  this.data.cpostal;
       this.formData.infocalle = this.data.infocalle;
       this.formData.noexterior = this.data.noexterior; 
