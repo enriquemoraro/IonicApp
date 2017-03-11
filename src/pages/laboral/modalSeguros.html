@@ -1,0 +1,31 @@
+<ion-header no-border>
+<ion-toolbar color="portafolio-header" >
+    <ion-title>Cobertura del seguro</ion-title>
+    <button ion-button icon-only clear color="light" (click)="cancelar()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+     <ion-item>
+            
+            <ion-label item-left>ADENTRO</ion-label>
+        </ion-item>
+
+
+       <ion-item>
+            <ion-label item-left>Indique el monto que desea asegurar</ion-label> 
+       </ion-item>
+
+       <ion-item>
+            <ion-input type="text" name="monto" required [(ngModel)]="data.monto"></ion-input>
+       </ion-item>
+        
+
+         <div class="center">
+            <button ion-button type="submit">Siguiente</button>
+        </div>
+    
+</ion-content>

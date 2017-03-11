@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, AlertController, ModalController } from 'ionic-angular';
 import { LaboralService } from '../../services/laboralservice';
 
 //import { CuestionarioPage } from '../cuestionario/cuestionario';
@@ -17,7 +17,8 @@ export class LaboralPage {
 private data: any;
 private isSubmitted: Boolean = false;
   
-  constructor(public nav: NavController, private formData: LaboralService) {
+  constructor(public nav: NavController, private formData: LaboralService,public modalCtrl: ModalController,
+  public alertCtrl: AlertController) {
     this.nav = nav;
     this.formData = formData;
     this.data = {
@@ -25,7 +26,7 @@ private isSubmitted: Boolean = false;
       actividad: '',
       ingresos: '',
       noserie:'',
-      tos: false,
+      tos: false
     }
 
   }
@@ -44,5 +45,23 @@ private isSubmitted: Boolean = false;
     }
 
   }
+
+          agregarInversion(){
+
+        // create modal
+        let modal = this.modalCtrl.create(pruebaModal);
+        // open modal
+
+        modal.onDidDismiss( data => {
+
+            if ( data!= null && data!= undefined ){
+
+
+            }          
+        });
+
+        modal.present();      
+    }
+
 
 }
