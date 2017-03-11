@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController, AlertController } from 'ionic-angular';
-import { Rfcservice } from '../../services/rfcservice';
+import { GeneralService } from '../../services/generalService';
 //import { GeninfoPage } from '../geninfo/geninfo';
 import { InfoPersonaPage } from '../info-persona/info-persona';
-//import { PerfiltransPage } from '../perfiltrans/perfiltrans';
 
 @Component({
   selector: 'page-home',
@@ -13,9 +12,8 @@ export class HomePage {
  private data: any;
   private isSubmitted: Boolean = false;
   
-  constructor(public alertCtrl: AlertController, public nav: NavController, private formData: Rfcservice) {
+  constructor(public alertCtrl: AlertController, public nav: NavController, public formData: GeneralService) {
     this.nav = nav;
-    this.formData = formData;
     this.data = {
       rfc: '',
       ine: '',
@@ -61,17 +59,18 @@ export class HomePage {
 
 
 
-    onSubmit(rfcservice) {
+    onSubmit(screenForm) {
     this.isSubmitted = true;
     console.log('onSubmit');
-    console.log(rfcservice);
+    console.log(screenForm);
     
-    if ((rfcservice.valid) ) {
-      this.formData.rfc = this.data.rfc;
-      this.formData.ine = this.data.ine;
-      this.formData.curp = this.data.curp; 
+    if ((screenForm.valid) ) {
+      this.formData.identificacion = {
+         rfc: this.data.rfc,
+         curp: this.data.curp,
+         ine: this.data.ine
+    };
       this.nav.push(InfoPersonaPage);
-   // this.nav.push(PerfiltransPage);
     }
   }
 

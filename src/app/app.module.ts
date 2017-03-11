@@ -20,6 +20,7 @@ import { MyHabitosService } from '../services/habitosService';
 import { pruebaModal } from '../pages/habitos/modalHabitos';
 import { AportacionesPage } from '../pages/aportaciones/aportaciones';
 import { MyAportacionesService } from '../services/aportacionesService';
+import { GeneralService } from '../services/generalService';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,6 @@ import { MyAportacionesService } from '../services/aportacionesService';
     pruebaModal,
     AportacionesPage
   ],
-  providers: [{provide: MyAportacionesService, useClass: MyAportacionesService}, {provide: MyHabitosService, useClass: MyHabitosService}, {provide: MyInvestigacionService, useClass: MyInvestigacionService}, {provide: MyContactoService, useClass: MyContactoService}, {provide: PerfilService, useClass: PerfilService}, {provide: MyDomicilioService, useClass: MyDomicilioService}, {provide: MyNacionalidadService, useClass: MyNacionalidadService}, {provide: MyInfoPerService, useClass: MyInfoPerService}, {provide: Rfcservice, useClass: Rfcservice}, {provide: ErrorHandler, useClass: IonicErrorHandler}]
+  providers: [{provide: GeneralService, useClass: GeneralService}, {provide: MyAportacionesService, useClass: MyAportacionesService}, {provide: MyHabitosService, useClass: MyHabitosService}, {provide: MyInvestigacionService, useClass: MyInvestigacionService}, {provide: MyContactoService, useClass: MyContactoService}, {provide: PerfilService, useClass: PerfilService}, {provide: MyDomicilioService, useClass: MyDomicilioService}, {provide: MyNacionalidadService, useClass: MyNacionalidadService}, {provide: MyInfoPerService, useClass: MyInfoPerService}, {provide: Rfcservice, useClass: Rfcservice}, {provide: ErrorHandler, useClass: IonicErrorHandler}]
 })
 export class AppModule {}

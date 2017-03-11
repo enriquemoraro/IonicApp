@@ -14,16 +14,16 @@
         <ion-list>
             <ion-item>
                 <ion-label floating>Apellido Paterno*</ion-label>
-                <ion-input type="text" name="appaterno" required [(ngModel)]="data.appaterno"></ion-input>
+                <ion-input type="text" name="apellidoPaterno" required [(ngModel)]="data.apellidoPaterno"></ion-input>
             </ion-item>
-            <div [hidden]="f.controls.appaterno && (f.controls.appaterno.valid || (f.controls.appaterno.pristine && !isSubmitted))" class="note danger">
+            <div [hidden]="f.controls.apellidoPaterno && (f.controls.apellidoPaterno.valid || (f.controls.apellidoPaterno.pristine && !isSubmitted))" class="note danger">
                 El apellido paterno es requerido
             </div>
             <ion-item>
                 <ion-label floating>Apellido Materno*</ion-label>
-                <ion-input type="text" name="apmaterno" required [(ngModel)]="data.apmaterno"></ion-input>
+                <ion-input type="text" name="apellidoMaterno" required [(ngModel)]="data.apellidoMaterno"></ion-input>
             </ion-item>
-            <div [hidden]="f.controls.apmaterno && (f.controls.apmaterno.valid || (f.controls.apmaterno.pristine && !isSubmitted))" class="note danger">
+            <div [hidden]="f.controls.apellidoMaterno && (f.controls.apellidoMaterno.valid || (f.controls.apellidoMaterno.pristine && !isSubmitted))" class="note danger">
                 El apellido materno es requerido
             </div>
             <ion-item>
