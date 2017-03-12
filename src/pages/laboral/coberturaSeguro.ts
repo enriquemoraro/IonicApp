@@ -1,13 +1,12 @@
 import { Component} from '@angular/core';
 import { ViewController, NavParams,AlertController,ModalController } from 'ionic-angular';
-import {modalSeguro} from './modalSeguro';
+import { CoberturaMonto } from './coberturaMonto';
 
 @Component({
-    templateUrl: 'laboralModal.html'
+    templateUrl: 'coberturaSeguro.html'
 })
-export class pruebaModal {
+export class CoberturaSeguro {
 private data: any;
-  //private isSubmitted: Boolean = false;
 
     constructor(private viewCtrl: ViewController, private params: NavParams,public alertCtrl: AlertController,
     public modalCtrl: ModalController) {
@@ -24,7 +23,7 @@ private data: any;
 mostrarmontos(){
 
         // create modal
-        let modal = this.modalCtrl.create(modalSeguro);
+        let modal = this.modalCtrl.create(CoberturaMonto);
         // open modal
 
         modal.onDidDismiss( data => {
@@ -40,3 +39,5 @@ mostrarmontos(){
 
 
 }
+
+  

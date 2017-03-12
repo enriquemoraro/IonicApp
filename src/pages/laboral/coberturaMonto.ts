@@ -1,16 +1,17 @@
 import { Component} from '@angular/core';
 import { ViewController, NavParams,AlertController } from 'ionic-angular';
 
+
 @Component({
-    templateUrl: 'modalSeguro.html'
+    templateUrl: 'coberturaMonto.html'
 })
-export class modalSeguro {
+export class CoberturaMonto {
 private data: any;
-  //private isSubmitted: Boolean = false;
+  private isSubmitted: Boolean = false;
 
     constructor(private viewCtrl: ViewController, private params: NavParams,public alertCtrl: AlertController) {
     this.data = {
-      monto: ''
+      monto: '',
      
     }
 

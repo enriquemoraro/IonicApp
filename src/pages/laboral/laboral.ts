@@ -1,14 +1,8 @@
 import { Component } from '@angular/core';
-import { NavController, AlertController, ModalController } from 'ionic-angular';
+import { NavController, AlertController,ModalController } from 'ionic-angular';
 import { LaboralService } from '../../services/laboralservice';
+import { CoberturaSeguro } from './coberturaSeguro';
 
-//import { CuestionarioPage } from '../cuestionario/cuestionario';
-/*
-  Generated class for the Laboral page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
 @Component({
   selector: 'page-laboral',
   templateUrl: 'laboral.html'
@@ -17,8 +11,8 @@ export class LaboralPage {
 private data: any;
 private isSubmitted: Boolean = false;
   
-  constructor(public nav: NavController, private formData: LaboralService,public modalCtrl: ModalController,
-  public alertCtrl: AlertController) {
+  constructor(public nav: NavController, private formData: LaboralService,public alertCtrl: AlertController,
+  public modalCtrl: ModalController) {
     this.nav = nav;
     this.formData = formData;
     this.data = {
@@ -26,7 +20,7 @@ private isSubmitted: Boolean = false;
       actividad: '',
       ingresos: '',
       noserie:'',
-      tos: false
+      tos: false,
     }
 
   }
@@ -46,22 +40,17 @@ private isSubmitted: Boolean = false;
 
   }
 
-          agregarInversion(){
+        ingresaCobertura(){
 
         // create modal
-        let modal = this.modalCtrl.create(pruebaModal);
+        let modal = this.modalCtrl.create(CoberturaSeguro);
         // open modal
-
         modal.onDidDismiss( data => {
-
             if ( data!= null && data!= undefined ){
-
-
             }          
         });
 
         modal.present();      
     }
-
 
 }

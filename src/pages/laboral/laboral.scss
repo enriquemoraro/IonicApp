@@ -1,37 +1,26 @@
-page-laboral {
-.center-toggle{
-
-   padding-top: 15%;
-
-}
-.justifytext{
-    text-align: justify;
-      font-size: 1.2rem;
-    line-height: 1.0;
-    color:lightgray;
-}
-.label label-md{
-    font-size: 1.0em;
-    line-height: 1.2;
-}
-.toolbar-title.toolbar-title-md{
-    font-size: initial;
-    }
-    .cartaprincipal{
-       margin-top: 20%;
+     .cartaprincipal{
+        margin-top: 20%;
     }
 
-.cartaprincipal2{
-       margin-top: 10%;
+    .button-md{
+        width: 100%; 
     }
-.button-md{
-    width: 100%;
-}
+
     .center {
         text-align: center;
     }
 
- .input-cover {
+  .note.danger {
+       padding-left: 16px;
+       color: #d14;
+    }
+
+
+    .toolbar-title.toolbar-title-md{
+    font-size: initial;
+    }
+
+      .input-cover {
        position: absolute;
        top: 0;
        left: 0;
@@ -40,7 +29,7 @@ page-laboral {
        height: 100%;
   }
 
-.item-cover {
+ .item-cover {
        position: absolute;
        top: 0;
        left: 0;
@@ -49,6 +38,33 @@ page-laboral {
        background: transparent;
        cursor: pointer;
        border-bottom: 1px solid lightgray;
-  
+  }
+
+
+ion-modal {
+    padding: 20px;
+    background: rgba(0,0,0,0.6)
 }
+
+#circle{
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
 }
+
+ion-content {
+    background-color: red;
+    /*background-image: url('fondo_portafolio_inv.png');*/
+    background-repeat: no-repeat;
+background-size:cover;
+}
+
+
+.portafolioButton{
+    width: 90%;
+    text-align:center;
+    margin:auto;
+
+}
+
+
