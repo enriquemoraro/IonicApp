@@ -1,0 +1,54 @@
+page-cuestionario {
+
+ .center-toggle{
+ 
+    padding-top: 15%;
+}
+.justifytext{
+    text-align: justify;
+      font-size: 1.2rem;
+    line-height: 1.0;
+}
+.label label-md{
+    font-size: 1.0em;
+    line-height: 1.2;
+}
+.toolbar-title.toolbar-title-md{
+    font-size: initial;
+    }
+    .cartaprincipal{
+       margin-top: 20%;
+    }
+
+ .cartaprincipal2{
+       margin-top: 10%;
+    }
+.button-md{
+    width: 100%;
+}
+    .center {
+        text-align: center;
+    }
+
+  .input-cover {
+       position: absolute;
+       top: 0;
+       left: 0;
+       width: 100%;
+       border-bottom: 1px solid lightgray;
+       height: 100%;
+  }
+
+ .item-cover {
+       position: absolute;
+       top: 0;
+       left: 0;
+       width: 100%;
+       height: 100%;
+       background: transparent;
+       cursor: pointer;
+       border-bottom: 1px solid lightgray;
+  }
+
+
+}

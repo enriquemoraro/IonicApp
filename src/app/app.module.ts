@@ -17,7 +17,7 @@ import { HabitosPage } from '../pages/habitos/habitos';
 import { InvestigacionPage } from '../pages/investigacion/investigacion'; 
 import { MyInvestigacionService } from '../services/investigacionService';
 import { MyHabitosService } from '../services/habitosService';
-//import { pruebaModal } from '../pages/habitos/modalHabitos';
+import { CuestionarioPage } from '../pages/cuestionario/cuestionario';
 import { AportacionesPage } from '../pages/aportaciones/aportaciones';
 import { MyAportacionesService } from '../services/aportacionesService';
 import { GeneralService } from '../services/GeneralService';
@@ -26,6 +26,7 @@ import { LaboralService } from '../services/laboralservice';
 import { CoberturaMonto } from '../pages/laboral/coberturaMonto';
 import { CoberturaSeguro } from '../pages/laboral/coberturaSeguro';
 import { MyCoberturaMontoService } from '../services/coberturaMontoService';
+import { MyCuestionarioService } from '../services/cuestionarioService';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { MyCoberturaMontoService } from '../services/coberturaMontoService';
     AportacionesPage,
     LaboralPage,
     CoberturaMonto,
-    CoberturaSeguro
+    CoberturaSeguro,
+    CuestionarioPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -60,8 +62,9 @@ import { MyCoberturaMontoService } from '../services/coberturaMontoService';
     AportacionesPage,
     LaboralPage,
     CoberturaMonto,
-    CoberturaSeguro
+    CoberturaSeguro,
+    CuestionarioPage
   ],
-  providers: [{provide: MyCoberturaMontoService, useClass: MyCoberturaMontoService}, {provide: GeneralService, useClass: GeneralService},{provide: LaboralService, useClass: LaboralService},{provide: MyAportacionesService, useClass: MyAportacionesService}, {provide: MyHabitosService, useClass: MyHabitosService}, {provide: MyInvestigacionService, useClass: MyInvestigacionService}, {provide: MyContactoService, useClass: MyContactoService}, {provide: PerfilService, useClass: PerfilService}, {provide: MyDomicilioService, useClass: MyDomicilioService}, {provide: MyNacionalidadService, useClass: MyNacionalidadService}, {provide: MyInfoPerService, useClass: MyInfoPerService}, {provide: Rfcservice, useClass: Rfcservice}, {provide: ErrorHandler, useClass: IonicErrorHandler}]
+  providers: [{provide: MyCuestionarioService, useClass: MyCuestionarioService}, {provide: MyCoberturaMontoService, useClass: MyCoberturaMontoService}, {provide: GeneralService, useClass: GeneralService},{provide: LaboralService, useClass: LaboralService},{provide: MyAportacionesService, useClass: MyAportacionesService}, {provide: MyHabitosService, useClass: MyHabitosService}, {provide: MyInvestigacionService, useClass: MyInvestigacionService}, {provide: MyContactoService, useClass: MyContactoService}, {provide: PerfilService, useClass: PerfilService}, {provide: MyDomicilioService, useClass: MyDomicilioService}, {provide: MyNacionalidadService, useClass: MyNacionalidadService}, {provide: MyInfoPerService, useClass: MyInfoPerService}, {provide: Rfcservice, useClass: Rfcservice}, {provide: ErrorHandler, useClass: IonicErrorHandler}]
 })
 export class AppModule {}
