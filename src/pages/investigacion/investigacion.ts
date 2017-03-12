@@ -22,20 +22,21 @@ export class InvestigacionPage {
       inicioFunc: '',
       termFunc: '' 
     }
+    
   }
 
-    onSubmit(investigacionService) {
+    onSubmit(screenform) {
     this.isSubmitted = true;
     console.log('onSubmit');
-    console.log(investigacionService);
     
-    if ((investigacionService.valid)) {
-      this.formData.nomCompleto = this.data.nomCompleto;
-      this.formData.puesto = this.data.puesto;
-      this.formData.parentesco = this.data.parentesco; 
-      this.formData.inicioFunc = this.data.inicioFunc; 
-      this.formData.termFunc = this.data.termFunc; 
+    if ((screenform.valid)) {
+     this.formData.identificacion = {
+         rfc: this.data.rfc,
+         curp: this.data.curp,
+         ine: this.data.ine
+    };
       this.nav.push(CuestionarioPage); 
+      
     }
 
   }

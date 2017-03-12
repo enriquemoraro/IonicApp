@@ -1,5 +1,5 @@
 
-<ion-header no-border>
+<ion-header no-border class="divocultar" id="forma">
 
   <ion-toolbar color="portafolio-header" >
     <ion-title>Cobertura del seguro</ion-title>
@@ -9,8 +9,8 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content >
-    <form #f="ngForm" novalidate >
+<ion-content id="divo">
+    <form #f="ngForm" novalidate id="formulario" >
     
      <ion-item class="tos1">
             <ion-toggle item-right [(ngModel)]="data.tos1" name="tos1" type="button" 

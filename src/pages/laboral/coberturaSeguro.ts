@@ -9,11 +9,12 @@ export class CoberturaSeguro {
 private data: any;
 
     constructor(private viewCtrl: ViewController, private params: NavParams,public alertCtrl: AlertController,
+    
     public modalCtrl: ModalController) {
     this.data = {
       tos1: false
-    }
-
+    } 
+  
   }
 
   cancelar() {
@@ -34,7 +35,9 @@ mostrarmontos(){
             }          
         });
 
-        modal.present();      
+        modal.present();   
+        
+  
     }
 
 

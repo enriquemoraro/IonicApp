@@ -19,6 +19,7 @@ export class PerfilTransPage {
   
   constructor(public nav: NavController, private formData: GeneralService) {
    this.nav = nav;
+console.log(formData);
     this.formData = formData;
     this.data = {
       transmes: '',
@@ -28,17 +29,18 @@ export class PerfilTransPage {
     }
   }
 
-  onSubmit(GeneralService) {
+  onSubmit(screenForm) {
     this.isSubmitted = true;
     console.log('onSubmit');
-    console.log(GeneralService);
+    console.log(screenForm);
     
-    if ((GeneralService.valid) ) {
-      this.formData.transmes = this.data.transmes;
-      this.formData.transmes2 = this.data.transmes2;
-      this.formData.retirosmen1 = this.data.retirosmen1;
-      this.formData.retirosmen2 = this.data.retirosmen2; 
-      this.nav.push(LaboralPage);
+    if ((screenForm.valid) ) {
+      this.formData.transaccion = {
+         transmes: this.data.transmes,
+         transmes2: this.data.transmes2,
+         retirosmen1: this.data.retirosmen1,
+         retirosmen2: this.data.retirosmen2,
+    };       this.nav.push(LaboralPage);
     }
   }
   

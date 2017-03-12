@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, AlertController,ModalController } from 'ionic-angular';
 import { LaboralService } from '../../services/laboralservice';
+import { GeneralService } from '../../services/GeneralService';
 import { CoberturaSeguro } from './coberturaSeguro';
 
 @Component({
@@ -10,8 +11,11 @@ import { CoberturaSeguro } from './coberturaSeguro';
 export class LaboralPage {
 private data: any;
 private isSubmitted: Boolean = false;
-  
-  constructor(public nav: NavController, private formData: LaboralService,public alertCtrl: AlertController,
+ 
+
+  constructor(public nav: NavController,  public formData: GeneralService,public alertCtrl: AlertController,
+ 
+ 
   public modalCtrl: ModalController) {
     this.nav = nav;
     this.formData = formData;
@@ -23,18 +27,24 @@ private isSubmitted: Boolean = false;
       tos: false,
     }
 
+
   }
   
-   onSubmit(laboralservice) {
+   onSubmit(screenform) {
+
+ 
+
     this.isSubmitted = true;
     console.log('onSubmit');
-    console.log(laboralservice);
+    console.log(screenform);
     
-    if ((laboralservice.valid)) {
-      this.formData.ocupacion = this.data.ocupacion;
-      this.formData.actividad = this.data.actividad;
-      this.formData.ingresos = this.data.ingresos; 
-      this.formData.noserie = this.data.noserie; 
+    if ((screenform.valid)) {
+        this.formData.laboral = {
+         actividad: this.data.actividad,
+         ocupacion: this.data.ocupacion,
+         ingresos: this.data.ingresos,
+         noserie: this.data.noserie
+    };
       //this.nav.push(CuestionarioPage); 
     }
 
@@ -51,6 +61,8 @@ private isSubmitted: Boolean = false;
         });
 
         modal.present();      
+      
+
     }
 
 }

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { MyContactoService } from '../../services/contactoservice';
+import { GeneralService } from '../../services/GeneralService';
+//import { MyContactoService } from '../../services/contactoservice';
 import { InfoDomicilioPage } from '../info-domicilio/info-domicilio';
 
 /*
@@ -17,7 +18,7 @@ export class InfoContactoPage {
  private data: any;
   private isSubmitted: Boolean = false;
   
-  constructor(public nav: NavController, private formData: MyContactoService) {
+  constructor(public nav: NavController, private formData: GeneralService) {
    this.nav = nav;
     this.formData = formData;
     this.data = {
@@ -27,14 +28,18 @@ export class InfoContactoPage {
     }
   }
 
-  onSubmit(GeneralService) {
+  onSubmit(screenform) {
     this.isSubmitted = true;
     console.log('onSubmit');
-    console.log(GeneralService);
+    console.log(screenform);
     
-    if ((GeneralService.valid) ) {
-      this.formData.telefono = this.data.telefono;
-      this.formData.email = this.data.email;
+    if ((screenform.valid) ) {  
+    
+    this.formData.identificacion = {
+         rfc: this.data.rfc,
+         curp: this.data.curp,
+         ine: this.data.ine
+    };
       this.nav.push(InfoDomicilioPage);
       console.log(this.data);
     }

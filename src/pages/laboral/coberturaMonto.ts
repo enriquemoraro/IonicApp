@@ -22,17 +22,22 @@ export class CoberturaMonto {
   }
 
   cancelar() {
+    console.log("cerrar modal");
     this.viewCtrl.dismiss();
+  
   }
 
   onSubmit(coberturaMontoService) {
+    
     this.isSubmitted = true;
     console.log('onSubmit');
     console.log(coberturaMontoService);
     
     if ((coberturaMontoService.valid) ) {
       this.formData.monto = this.data.monto; 
-      this.nav.push(InvestigacionPage);
     }
+      this.nav.push(InvestigacionPage);
+    
+
   }
 }

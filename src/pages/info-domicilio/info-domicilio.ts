@@ -13,6 +13,7 @@ export class InfoDomicilioPage {
  
   constructor(public nav: NavController, public formData: GeneralService) {
     this.nav = nav;
+  console.log(formData);
     this.formData = formData;
     this.data = {
     cpostal: '',
@@ -26,21 +27,22 @@ export class InfoDomicilioPage {
     }
   }
   
-  onSubmit(GeneralService) {
+  onSubmit(screenform) {
     this.isSubmitted = true;
     console.log('onSubmit');
-    console.log(GeneralService);
-    console.log(this.data);
+    console.log(screenform);
     
-    if ((GeneralService.valid)) {
-      this.formData.cpostal =  this.data.cpostal;
-      this.formData.infocalle = this.data.infocalle;
-      this.formData.noexterior = this.data.noexterior; 
-      this.formData.noixterior = this.data.noixterior;
-      this.formData.domicilioPais = this.data.domicilioPais;
-      this.formData.domicilioEstado = this.data.domicilioEstado;
-      this.formData.domicilioColonia = this.data.domicilioColonia;
-      this.formData.domicilioDelegacion = this.data.domicilioDelegacion;
+    if ((screenform.valid)) {
+ this.formData.domicilio = {
+      cpostal :  this.data.cpostal,
+      infocalle : this.data.infocalle,
+      noexterior : this.data.noexterior, 
+      noixterior : this.data.noixterior,
+      domicilioPais : this.data.domicilioPais,
+      domicilioEstado : this.data.domicilioEstado,
+      domicilioColonia : this.data.domicilioColonia,
+      domicilioDelegacion : this.data.domicilioDelegacion
+      }
       this.nav.push(PerfilTransPage);
     }
 

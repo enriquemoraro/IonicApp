@@ -17,26 +17,30 @@ export class InfoPersonaPage {
   private data: any;
   private isSubmitted: Boolean = false;
   
-  constructor(public nav: NavController, private formData: GeneralService) {
+  constructor(public nav: NavController, public formData: GeneralService) {
+console.log(formData)
     this.nav = nav;
     this.formData = formData;
-    this.data = {
+   this.data = {
       nombre: '',
-      appaterno: '',
-      apmaterno: '',
+      apellidoPaterno: '',
+      apellidoMaterno: '',
       tos: false,
     }
   }
 
-    onSubmit(GeneralService) {
+    onSubmit(screenform) {
     this.isSubmitted = true;
     console.log('onSubmit');
-    console.log(GeneralService);
+    console.log(screenform);
     
-    if ((GeneralService.valid)) {
-      this.formData.nombre = this.data.nombre;
-      this.formData.appaterno = this.data.appaterno;
-      this.formData.apmaterno = this.data.apmaterno; 
+    if ((screenform.valid)) {
+this.formData.nacionalidad = {
+         nacionalidad: this.data.nacionalidad,
+         pais: this.data.pais,
+         month: this.data.month
+    };
+
       this.nav.push(InfoNacionalidadPage);
     }
 

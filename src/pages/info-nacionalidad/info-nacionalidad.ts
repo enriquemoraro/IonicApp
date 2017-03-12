@@ -18,7 +18,8 @@ export class InfoNacionalidadPage {
   private isSubmitted: Boolean = false;
  
   
-  constructor(public nav: NavController, private formData: GeneralService) {
+  constructor(public nav: NavController, public formData: GeneralService) {
+ console.log(formData);
     this.nav = nav;
     this.formData = formData;
     this.data = {
@@ -28,15 +29,17 @@ export class InfoNacionalidadPage {
     }
   }
 
-   onSubmit(GeneralService) {
+   onSubmit(screenform) {
     this.isSubmitted = true;
     console.log('onSubmit');
-    console.log(GeneralService);
+    console.log(screenform);
     
-    if ((GeneralService.valid)) {
-      this.formData.nacionalidad = this.data.nacionalidad;
-      this.formData.pais = this.data.pais;
-      this.formData.month = this.data.month;
+    if ((screenform.valid)) {
+ this.formData.nacionalidad = {
+         nacionalidad: this.data.nacionalidad,
+         pais: this.data.pais,
+         month: this.data.month
+    };
       this.nav.push(InfoContactoPage); 
     }
 
