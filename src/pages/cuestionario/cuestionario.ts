@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController ,AlertController } from 'ionic-angular';
 import { MyCuestionarioService } from '../../services/cuestionarioService';
-//import { InfoNacionalidadPage } from '../info-nacionalidad/info-nacionalidad';
+import { HabitosPage } from '../habitos/habitos';
 
 /*
   Generated class for the Cuestionario page.
@@ -14,9 +14,8 @@ import { MyCuestionarioService } from '../../services/cuestionarioService';
   templateUrl: 'cuestionario.html'
 })
 export class CuestionarioPage {
-
 private data: any;
-//private isSubmitted: Boolean = false;
+private isSubmitted: Boolean = false;
   
   constructor(public nav: NavController, private formData: MyCuestionarioService,public alertCtrl: AlertController) {
     this.nav = nav;
@@ -60,6 +59,13 @@ doPrompt() {
   }
 
 
+    onSubmit(habitosService) {
+    this.isSubmitted = true;
+    console.log('onSubmit');
+    console.log(habitosService);
+    this.nav.push(HabitosPage);
+    
+  }
 
 
 
