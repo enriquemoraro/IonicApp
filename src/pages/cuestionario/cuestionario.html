@@ -1,0 +1,220 @@
+
+<div style="width: 470x; height: 500px; overflow-y: scroll;">
+<form #f="ngForm" novalidate >
+<ion-header>
+    <ion-navbar color="primary">
+        <ion-title>
+           CUESTIONARIO
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-card class=cartaprincipal>
+ 
+  <ion-card-content>
+    
+        <ion-list>
+          <ion-row>
+          <ion-col width-75> <ion-item text-wrap item-left class=justifytext>
+
+        ¿Padece o ha padecido de insufiencia cardiaca,infartos,dolor en pecho o tórax,
+        transtornos de la circulación o presión arterial alta?
+                </ion-item>
+            </ion-col>
+          <ion-col width-35 class=center-toggle>
+
+        <ion-toggle [(ngModel)]="data.tos" name="tos" type="button" (click)="noSubmit($event)"></ion-toggle>
+
+
+        </ion-col>
+        </ion-row>
+        
+
+
+        
+        
+          <ion-row>
+          <ion-col width-75> <ion-item text-wrap item-left class=justifytext>
+
+        ¿Ha tenido alguna enfermedad o accidente que siga requiriendo de chequeos periódicos o tratamientos?
+                </ion-item>
+            </ion-col>
+          <ion-col width-35 class=center-toggle>
+
+        <ion-toggle [(ngModel)]="data.tos" name="tos" type="button" (click)="noSubmit($event)"></ion-toggle>
+
+
+        </ion-col>
+        </ion-row>
+
+        
+
+        
+        
+                 <ion-row>
+          <ion-col width-75> <ion-item text-wrap item-left class=justifytext>
+
+        ¿Ha tenido alguna enefermedad o accidente que siga requiriendo de chequeos periódicos o tratamientos?
+                </ion-item>
+            </ion-col>
+          <ion-col width-35 class=center-toggle>
+
+        <ion-toggle [(ngModel)]="data.tos" name="tos" type="button" (click)="noSubmit($event)"></ion-toggle>
+
+
+        </ion-col>
+        </ion-row>
+
+
+
+
+
+                      <ion-row>
+                <ion-col width-75> <ion-item text-wrap item-left class=justifytext>
+
+              ¿Padece o ha padecido de bronquitis crónica,asma,tuberculosis o enfisema pulmonar?
+                      </ion-item>
+                  </ion-col>
+                <ion-col width-35 class=center-toggle>
+
+              <ion-toggle [(ngModel)]="data.tos" name="tos" type="button" (click)="noSubmit($event)"></ion-toggle>
+
+
+              </ion-col>
+              </ion-row>
+
+
+  <ion-row>
+                <ion-col width-75> <ion-item text-wrap item-left class=justifytext>
+
+              ¿Ha padecido de cualquier tipo de cáncer?
+                      </ion-item>
+                  </ion-col>
+                <ion-col width-35 class=center-toggle>
+
+              <ion-toggle [(ngModel)]="data.tos" name="tos" type="button" (click)="noSubmit($event)"></ion-toggle>
+
+
+              </ion-col>
+              </ion-row>
+
+             <ion-row>
+                <ion-col width-75>
+                   <ion-item text-wrap item-left class=justifytext>
+                      ¿Padece o ha padecido de hepatitis, cirrosis, pancreatitis o cualquier otra enfermedad del higado o del páncreas?
+                   </ion-item>
+                </ion-col>
+                <ion-col width-35 class=center-toggle>
+                    <ion-toggle [(ngModel)]="data.tos" name="tos" type="button" (click)="noSubmit($event)"></ion-toggle>
+                </ion-col>
+             </ion-row>
+
+             <ion-row>
+                <ion-col width-75>
+                   <ion-item text-wrap item-left class=justifytext>
+                      ¿Ha tenido resultados positivos en éxamenes de VIH SIDA?
+                   </ion-item>
+                </ion-col>
+                <ion-col width-35 class=center-toggle>
+                    <ion-toggle [(ngModel)]="data.tos" name="tos" type="button" (click)="noSubmit($event)"></ion-toggle>
+                </ion-col>
+             </ion-row>
+
+            <ion-row>
+                <ion-col width-75>
+                   <ion-item text-wrap item-left class=justifytext>
+                      ¿Padece o ha padecido de diabetes o hipoglucemia(azúcar baja)?
+                   </ion-item>
+                </ion-col>
+                <ion-col width-35 class=center-toggle>
+                    <ion-toggle [(ngModel)]="data.tos" name="tos" type="button" (click)="noSubmit($event)"></ion-toggle>
+                </ion-col>
+             </ion-row>
+
+             <ion-row>
+                <ion-col width-75>
+                   <ion-item text-wrap item-left class=justifytext>
+                      ¿Ha tenido resultados anormales en pruebas de labotarorio o diagnósticos (ultrasonido, resonancia, tomografia, rayos x o electrocardiogramas)?
+                   </ion-item>
+                </ion-col>
+                <ion-col width-35 class=center-toggle>
+                    <ion-toggle [(ngModel)]="data.tos" name="tos" type="button" (click)="noSubmit($event)"></ion-toggle>
+                </ion-col>
+             </ion-row>
+
+             <ion-row>
+                <ion-col width-75>
+                   <ion-item text-wrap item-left class=justifytext>
+                      ¿Ha tenido algun tipo de quístes o tumoraciones?
+                   </ion-item>
+                </ion-col>
+                <ion-col width-35 class=center-toggle>
+                    <ion-toggle [(ngModel)]="data.tos" name="tos" type="button" (click)="noSubmit($event)"></ion-toggle>
+                </ion-col>
+             </ion-row>
+
+             <ion-row>
+                <ion-col width-75>
+                   <ion-item text-wrap item-left class=justifytext>
+                      ¿Presenta actualmente sintomas o alteraciones de salud no atendidos medicamente?
+                   </ion-item>
+                </ion-col>
+                <ion-col width-35 class=center-toggle>
+                    <ion-toggle [(ngModel)]="data.tos" name="tos" type="button" (click)="noSubmit($event)"></ion-toggle>
+                </ion-col>
+             </ion-row>
+
+             <ion-row>
+                <ion-col width-75>
+                   <ion-item text-wrap item-left class=justifytext>
+                      ¿Padece o ha padecido de cualquier otra enfermedad o lesión diferente a las preguntas en este cuestionario?
+                   </ion-item>
+                </ion-col>
+                <ion-col width-35 class=center-toggle>
+                    <ion-toggle [(ngModel)]="data.tos" name="tos" type="button" (click)="noSubmit($event)"></ion-toggle>
+                </ion-col>
+             </ion-row>
+
+             <ion-row>
+                <ion-col width-75>
+                   <ion-item text-wrap item-left class=justifytext>
+                      ¿Ha estado hospitalizo?
+                   </ion-item>
+                </ion-col>
+                <ion-col width-35 class=center-toggle>
+                    <ion-toggle [(ngModel)]="data.tos" name="tos" type="button" (click)="noSubmit($event)"></ion-toggle>
+                </ion-col>
+             </ion-row>
+
+             <ion-row>
+                <ion-col width-75>
+                   <ion-item text-wrap item-left class=justifytext>
+                      ¿Practica algún deporte peligroso? / ¿Cuál?
+                   </ion-item>
+                </ion-col>
+                <ion-col width-35 class=center-toggle>
+                    <ion-toggle [(ngModel)]="data.tos" name="tos" type="button" (click)="noSubmit($event)"></ion-toggle>
+                </ion-col>
+             </ion-row>
+
+<ion-item>
+                <button ion-button color="secondary" block (click)="doPrompt()">Show Prompt Alert</button>
+            </ion-item>
+
+
+
+          
+</ion-list>
+</ion-card-content>
+</ion-card>
+<ion-footer>
+ <div class="center">
+            <button ion-button type="submit" (click)="onSubmit(f)">Siguiente</button>
+        </div>
+    
+
+</ion-footer>
+ </form>
+
+ </div>
+

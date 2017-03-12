@@ -1,0 +1,31 @@
+<ion-header no-border class="divocultar" id="forma2">
+<ion-toolbar color="portafolio-header" >
+    <ion-title>Cobertura del seguro</ion-title>
+    <button ion-button icon-only clear color="light" (click)="cancelar()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="divocultar">
+    <form #f="ngForm" id="divod" novalidate >
+     <ion-item>
+            
+            <ion-label item-left>ADENTRO</ion-label>
+        </ion-item>
+
+
+       <ion-item>
+            <ion-label item-left>Indique el monto que desea asegurar</ion-label> 
+       </ion-item>
+
+       <ion-item>
+            <ion-input type="text" name="monto" required [(ngModel)]="data.monto"></ion-input>
+       </ion-item>
+        
+
+         <div class="center">
+            <button ion-button type="submit" (click)="onSubmit(f)">Siguiente</button>
+        </div>
+    </form>    
+</ion-content>

@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController, AlertController } from 'ionic-angular';
-import { MyInvestigacionService } from '../../services/investigacionService';
+//import { MyInvestigacionService } from '../../services/investigacionService';
+import { GeneralService } from '../../services/GeneralService';
+import { CuestionarioPage } from '../cuestionario/cuestionario';
 
 @Component({
   selector: 'page-investigacion',
@@ -10,7 +12,7 @@ export class InvestigacionPage {
  private data: any;
   private isSubmitted: Boolean = false;
   
-  constructor( public alertCtrl: AlertController, public nav: NavController, private formData: MyInvestigacionService) {
+  constructor( public alertCtrl: AlertController, public nav: NavController, private formData: GeneralService) {
     this.nav = nav;
     this.formData = formData;
     this.data = {
@@ -20,20 +22,21 @@ export class InvestigacionPage {
       inicioFunc: '',
       termFunc: '' 
     }
+    
   }
 
-    onSubmit(investigacionService) {
+    onSubmit(screenform) {
     this.isSubmitted = true;
     console.log('onSubmit');
-    console.log(investigacionService);
     
-    if ((investigacionService.valid)) {
-      this.formData.nomCompleto = this.data.nomCompleto;
-      this.formData.puesto = this.data.puesto;
-      this.formData.parentesco = this.data.parentesco; 
-      this.formData.inicioFunc = this.data.inicioFunc; 
-      this.formData.termFunc = this.data.termFunc; 
-      //this.nav.push(InfoNacionalidadPage); 
+    if ((screenform.valid)) {
+     this.formData.identificacion = {
+         rfc: this.data.rfc,
+         curp: this.data.curp,
+         ine: this.data.ine
+    };
+      this.nav.push(CuestionarioPage); 
+      
     }
 
   }

@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { MyNacionalidadService } from '../../services/nacionalidadService';
+//import { MyNacionalidadService } from '../../services/nacionalidadService';
 import { InfoContactoPage } from '../../pages/info-contacto/info-contacto';
-
+import { GeneralService } from '../../services/GeneralService';
 /*
   Generated class for the InfoNacionalidad page.
 
@@ -18,7 +18,8 @@ export class InfoNacionalidadPage {
   private isSubmitted: Boolean = false;
  
   
-  constructor(public nav: NavController, private formData: MyNacionalidadService) {
+  constructor(public nav: NavController, public formData: GeneralService) {
+ console.log(formData);
     this.nav = nav;
     this.formData = formData;
     this.data = {
@@ -28,15 +29,17 @@ export class InfoNacionalidadPage {
     }
   }
 
-   onSubmit(MyNacionalidadService) {
+   onSubmit(screenform) {
     this.isSubmitted = true;
     console.log('onSubmit');
-    console.log(MyNacionalidadService);
+    console.log(screenform);
     
-    if ((MyNacionalidadService.valid)) {
-      this.formData.nacionalidad = this.data.nacionalidad;
-      this.formData.pais = this.data.pais;
-      this.formData.month = this.data.month;
+    if ((screenform.valid)) {
+ this.formData.nacionalidad = {
+         nacionalidad: this.data.nacionalidad,
+         pais: this.data.pais,
+         month: this.data.month
+    };
       this.nav.push(InfoContactoPage); 
     }
 

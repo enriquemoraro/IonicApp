@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
 import { NavController, AlertController } from 'ionic-angular';
+<<<<<<< HEAD
 import { GeneralService } from '../../services/generalService';
+=======
+import { GeneralService } from '../../services/GeneralService';
+>>>>>>> test2
 //import { GeninfoPage } from '../geninfo/geninfo';
 import { InfoPersonaPage } from '../info-persona/info-persona';
 
@@ -59,6 +63,7 @@ export class HomePage {
 
 
 
+<<<<<<< HEAD
     onSubmit(screenForm) {
     this.isSubmitted = true;
     console.log('onSubmit');
@@ -71,8 +76,27 @@ export class HomePage {
          ine: this.data.ine
     };
       this.nav.push(InfoPersonaPage);
+=======
+    onSubmit(screenform) {
+    this.isSubmitted = true;
+    
+    if ((screenform.valid) ) {
+    
+     this.formData.identificacion = {
+         rfc: this.data.rfc,
+         curp: this.data.curp,
+         ine: this.data.ine
+    };    
+      this.nav.push(InfoPersonaPage);
+   
+  
+
+
+>>>>>>> test2
     }
-  }
+  
+  
+}
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad info-Persona-Page');

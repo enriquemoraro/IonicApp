@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { PerfilService } from '../../services/perfilservice';
-import { InvestigacionPage } from '../investigacion/investigacion';
-
+//import { PerfilService } from '../../services/perfilservice';
+import { LaboralPage } from '../laboral/laboral';
+import { GeneralService } from '../../services/GeneralService';
 /*
   Generated class for the PerfilTrans page.
 
@@ -17,8 +17,9 @@ export class PerfilTransPage {
  private data: any;
   private isSubmitted: Boolean = false;
   
-  constructor(public nav: NavController, private formData: PerfilService) {
+  constructor(public nav: NavController, private formData: GeneralService) {
    this.nav = nav;
+console.log(formData);
     this.formData = formData;
     this.data = {
       transmes: '',
@@ -28,17 +29,18 @@ export class PerfilTransPage {
     }
   }
 
-  onSubmit(PerfilService) {
+  onSubmit(screenForm) {
     this.isSubmitted = true;
     console.log('onSubmit');
-    console.log(PerfilService);
+    console.log(screenForm);
     
-    if ((PerfilService.valid) ) {
-      this.formData.transmes = this.data.transmes;
-      this.formData.transmes2 = this.data.transmes2;
-      this.formData.retirosmen1 = this.data.retirosmen1;
-      this.formData.retirosmen2 = this.data.retirosmen2; 
-      this.nav.push(InvestigacionPage);
+    if ((screenForm.valid) ) {
+      this.formData.transaccion = {
+         transmes: this.data.transmes,
+         transmes2: this.data.transmes2,
+         retirosmen1: this.data.retirosmen1,
+         retirosmen2: this.data.retirosmen2,
+    };       this.nav.push(LaboralPage);
     }
   }
   

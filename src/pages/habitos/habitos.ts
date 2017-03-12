@@ -1,15 +1,9 @@
 import { Component } from '@angular/core';
 import { NavController, AlertController, ModalController } from 'ionic-angular';
-import { AportacionesPage } from '../../pages/aportaciones/aportaciones';
+import { AportacionesPage } from '../aportaciones/aportaciones';
 import { MyHabitosService } from '../../services/habitosService';
-import {pruebaModal} from './modalHabitos';
+import { ModalHabitos } from './modalHabitos';
 
-/*
-  Generated class for the Habitos page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
 @Component({
   selector: 'page-habitos',
   templateUrl: 'habitos.html'
@@ -26,7 +20,6 @@ export class HabitosPage {
       tos: false,
       tos2: false,
       tos3: false
-
     }
   }
 
@@ -34,18 +27,17 @@ export class HabitosPage {
     this.isSubmitted = true;
     console.log('onSubmit');
     console.log(habitosService);
-    this.nav.push(AportacionesPage);
-    
+    this.nav.push(AportacionesPage);  
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad info-Persona-Page');
   }
 
- agregarInversion(){
+ ingresarDroga(){
 
         // create modal
-        let modal = this.modalCtrl.create(pruebaModal);
+        let modal = this.modalCtrl.create(ModalHabitos);
         // open modal
 
         modal.onDidDismiss( data => {
@@ -59,10 +51,9 @@ export class HabitosPage {
         modal.present();      
     }
 
-
       updateItem(data){
     if(data.tos3 == true){
-      this.agregarInversion();   
+      this.ingresarDroga();   
     }
   }
 

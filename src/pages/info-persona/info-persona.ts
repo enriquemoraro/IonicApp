@@ -1,8 +1,12 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+<<<<<<< HEAD
 import { GeneralService } from '../../services/generalService';
+=======
+//import { MyInfoPerService } from '../../services/infoPerService';
+>>>>>>> test2
 import { InfoNacionalidadPage } from '../info-nacionalidad/info-nacionalidad';
-
+import { GeneralService } from '../../services/GeneralService';
 /*
   Generated class for the InfoPersona page.
 
@@ -17,10 +21,18 @@ export class InfoPersonaPage {
   private data: any;
   private isSubmitted: Boolean = false;
   
+<<<<<<< HEAD
   constructor(public nav: NavController,  public formData: GeneralService) {
     console.log(formData);
     this.nav = nav;
     this.data = 
+=======
+  constructor(public nav: NavController, public formData: GeneralService) {
+console.log(formData)
+    this.nav = nav;
+    this.formData = formData;
+   this.data = {
+>>>>>>> test2
       nombre: '',
       apellidoPaterno: '',
       apellidoMaterno: '',
@@ -28,6 +40,7 @@ export class InfoPersonaPage {
     }
   }
 
+<<<<<<< HEAD
     onSubmit(screenForm) {
     this.isSubmitted = true;
     console.log('onSubmit');
@@ -40,6 +53,21 @@ export class InfoPersonaPage {
         apellidoMaterno: this.data.apellidoMaterno
       }
       this.nav.push(InfoNacionalidadPage); 
+=======
+    onSubmit(screenform) {
+    this.isSubmitted = true;
+    console.log('onSubmit');
+    console.log(screenform);
+    
+    if ((screenform.valid)) {
+this.formData.nacionalidad = {
+         nacionalidad: this.data.nacionalidad,
+         pais: this.data.pais,
+         month: this.data.month
+    };
+
+      this.nav.push(InfoNacionalidadPage);
+>>>>>>> test2
     }
 
   }

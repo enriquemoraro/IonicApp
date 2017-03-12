@@ -4,7 +4,7 @@ import {ViewController,AlertController,ModalController } from 'ionic-angular';
 @Component({
     templateUrl: 'modalHabitos.html'
 })
-export class pruebaModal {
+export class ModalHabitos {
 private data: any;
   //private isSubmitted: Boolean = false;
 
@@ -18,25 +18,7 @@ private data: any;
 
   cancelar() {
     this.viewCtrl.dismiss();
-  }
-
-      agregarInversion(){
-
-        // create modal
-        let modal = this.modalCtrl.create(pruebaModal);
-        // open modal
-
-        modal.onDidDismiss( data => {
-
-            if ( data!= null && data!= undefined ){
-
-
-            }          
-        });
-
-        modal.present();      
-    }
-    
+  }   
 
    public  event = {
     termFunc: ''
