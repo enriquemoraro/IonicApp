@@ -25,6 +25,7 @@ import { LaboralPage } from '../pages/laboral/laboral';
 import { LaboralService } from '../services/laboralservice';
 import { CoberturaMonto } from '../pages/laboral/coberturaMonto';
 import { CoberturaSeguro } from '../pages/laboral/coberturaSeguro';
+import { MyCoberturaMontoService } from '../services/coberturaMontoService';
 
 @NgModule({
   declarations: [
@@ -61,6 +62,6 @@ import { CoberturaSeguro } from '../pages/laboral/coberturaSeguro';
     CoberturaMonto,
     CoberturaSeguro
   ],
-  providers: [{provide: GeneralService, useClass: GeneralService},{provide: LaboralService, useClass: LaboralService},{provide: MyAportacionesService, useClass: MyAportacionesService}, {provide: MyHabitosService, useClass: MyHabitosService}, {provide: MyInvestigacionService, useClass: MyInvestigacionService}, {provide: MyContactoService, useClass: MyContactoService}, {provide: PerfilService, useClass: PerfilService}, {provide: MyDomicilioService, useClass: MyDomicilioService}, {provide: MyNacionalidadService, useClass: MyNacionalidadService}, {provide: MyInfoPerService, useClass: MyInfoPerService}, {provide: Rfcservice, useClass: Rfcservice}, {provide: ErrorHandler, useClass: IonicErrorHandler}]
+  providers: [{provide: MyCoberturaMontoService, useClass: MyCoberturaMontoService}, {provide: GeneralService, useClass: GeneralService},{provide: LaboralService, useClass: LaboralService},{provide: MyAportacionesService, useClass: MyAportacionesService}, {provide: MyHabitosService, useClass: MyHabitosService}, {provide: MyInvestigacionService, useClass: MyInvestigacionService}, {provide: MyContactoService, useClass: MyContactoService}, {provide: PerfilService, useClass: PerfilService}, {provide: MyDomicilioService, useClass: MyDomicilioService}, {provide: MyNacionalidadService, useClass: MyNacionalidadService}, {provide: MyInfoPerService, useClass: MyInfoPerService}, {provide: Rfcservice, useClass: Rfcservice}, {provide: ErrorHandler, useClass: IonicErrorHandler}]
 })
 export class AppModule {}

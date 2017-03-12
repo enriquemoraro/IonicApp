@@ -8,7 +8,7 @@
 </ion-header>
 
 <ion-content>
-
+    <form #f="ngForm" novalidate >
      <ion-item>
             
             <ion-label item-left>ADENTRO</ion-label>
@@ -25,7 +25,7 @@
         
 
          <div class="center">
-            <button ion-button type="submit">Siguiente</button>
+            <button ion-button type="submit" (click)="onSubmit(f)">Siguiente</button>
         </div>
-    
+    </form>    
 </ion-content>

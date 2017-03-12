@@ -1,4 +1,6 @@
+
 <ion-header no-border>
+
   <ion-toolbar color="portafolio-header" >
     <ion-title>Cobertura del seguro</ion-title>
     <button ion-button icon-only clear color="light" (click)="cancelar()">
@@ -8,7 +10,8 @@
 </ion-header>
 
 <ion-content >
-
+    <form #f="ngForm" novalidate >
+    
      <ion-item class="tos1">
             <ion-toggle item-right [(ngModel)]="data.tos1" name="tos1" type="button" 
                     (ionChange)="mostrarmontos()" checked="false"></ion-toggle>
@@ -23,5 +26,5 @@
          <div class="center">
             <button ion-button type="submit" (click)="onSubmit(f)">Siguiente</button>
         </div>
-    
+</form>    
 </ion-content>
